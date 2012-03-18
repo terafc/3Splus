@@ -82,6 +82,7 @@ body{
 #menuTable{
 	border-collapse:collapse;
 	text-align:center;
+	background-color:#FBBBB1;
 	width:100%;
 }
 
@@ -147,26 +148,14 @@ body{
 
 .menuTd{
 	border:1px solid #FA6952;
-	background-color:#FBBBB1;
+	font-weight:bold;
+}
+
+.menuTdHover{
+	background-color:#FA6952;
 }
 
 .menuLink{
 	text-decoration:none;
 	color:black;
-}
-
-
-
-
-footer {
-	background-color: black;
-}
-s/* Liens par défaut (non survolés) */ {
-	text-decoration: none;
-	color: red;
-	font-style: italic;
-}
-s:hover/* Apparence au survol des liens */ {
-	text-decoration: underline;
-	color: green;
 }

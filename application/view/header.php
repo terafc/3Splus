@@ -31,8 +31,9 @@
 						<table id="headInfoTable">
 							<tr>
 								<td class="headInfoTd">
-									<span class="toReplace">15</span> Points
-									<img class="inlineBlock" alt="Star" src="<?php echo HTTP_IMG;?>/Star.png">
+									<span class="toReplace alignCenter verticalAlignM">15</span>
+									<span class="alignCenter verticalAlignM"> Points</span>
+									<img class="inlineBlock alignCenter verticalAlignM" alt="Star" src="<?php echo HTTP_IMG;?>/Star.png">
 								</td>
 								<td class="headInfoTd">
 									<span class="toReplace">0</span> Commande
@@ -48,11 +49,11 @@
 			<div id="menu" class="clearBoth">
 				<table id="menuTable">
 					<tr>
-						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Sandwich&action=show">Sandwich</a></td>
-						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=ViennoiserieEtChocolat&action=show">Viennoiserie & Chocolat</a></td>
-						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Salade&action=show">Salade</a></td>
-						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Glace&action=show">Glace</a></td>
-						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Boisson&action=show">Boisson</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Sandwich&action=show">Sandwich</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=ViennoiserieEtChocolat&action=show">Viennoiserie & Chocolat</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Salade&action=show">Salade</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Glace&action=show">Glace</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Boisson&action=show">Boisson</a></td>
 					</tr>
 				</table>
 			</div>	
