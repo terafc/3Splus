@@ -9,28 +9,53 @@
 		<script type="text/javascript" src="<?php echo HTTP_JS;?>/function.js"></script>
 	</head>
 	<body>
-		<div id="content">
-		    <div id ="header">
-				<div class="head">
-					<img src="<?php echo HTTP_IMG;?>/Logo.png" align="left">
-				</div>
-				<div id="boutique">
-					<div id="b">
-						<p>B</p>
+	    <div id ="header">
+			<div class="clearBoth">
+				<div id="headLeft">
+					<img class="inlineBlock" alt="Logo" src="<?php echo HTTP_IMG;?>/Logo.png">
+					<div class="inlineBlock verticalAlignB">
+						<span class="bold">
+							<span class="colorBlue">B</span>outique
+						</span>
 					</div>
-					<p>outique </p>
 				</div>
-				<div id="bloc2"></div>
-				<div>
-					<table id="menuHeader">
-						<tr>
-							<td><span><a href="<?php echo HTTP_INDEX;?>?page=Sandwich&action=show">Sandwich</a></span></td>
-							<td><span><a href="<?php echo HTTP_INDEX;?>?page=Viennoiserie&=show">Viennoiserie</a></span></td>
-							<td><span><a href="<?php echo HTTP_INDEX;?>?page=Salade&=show">Salade</a></span></td>
-							<td><span><a href="<?php echo HTTP_INDEX;?>?page=Glace&=show">Glace</a></span></td>
-							<td><span><a href="<?php echo HTTP_INDEX;?>?page=Boisson&=show">Boisson</a></span></td>
-		                </tr>
-					</table>
+				<div id="headRight">
+					<div id="infoCarrier">
+						<span class="bold">N° de la commande : </span><span class="toReplace">ID</span>
+						<br/>
+						<span class="bold">Porteur : </span><span class="toReplace">NOM_PRENOM_ID</span>
+						<br/>
+						<span class="bold">Groupe : </span><span class="toReplace">NOM</span>								
+					</div>
+					<div id="infoShop">
+						<table id="headInfoTable">
+							<tr>
+								<td class="headInfoTd">
+									<span class="toReplace">15</span> Points
+									<img class="inlineBlock" alt="Star" src="<?php echo HTTP_IMG;?>/Star.png">
+								</td>
+								<td class="headInfoTd">
+									<span class="toReplace">0</span> Commande
+								</td>
+								<td class="headInfoTd">
+									Panier : <span class="toReplace">0,00 €</span>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
-		    </div>
-		    <div id="main">
+			</div>
+			<div id="menu" class="clearBoth">
+				<table id="menuTable">
+					<tr>
+						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Sandwich&action=show">Sandwich</a></td>
+						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=ViennoiserieEtChocolat&action=show">Viennoiserie & Chocolat</a></td>
+						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Salade&action=show">Salade</a></td>
+						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Glace&action=show">Glace</a></td>
+						<td class="menuTd"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=Boisson&action=show">Boisson</a></td>
+					</tr>
+				</table>
+			</div>	
+		</div>
+		<hr/>
+	    <div id="main">

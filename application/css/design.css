@@ -1,27 +1,163 @@
-#header {
+/***************
+ * CSS Général * 
+ ***************/
+
+html{
+	background-image:url('../img/Sandwichs.jpg');
+}
+
+body{
+	display:block;
+	width:520px;
+	max-height:750px;
 	font-family: TrebuchetMS;
+	margin:0 auto;
+	padding:0;
+	border:none;
+	overflow:hidden;
+	text-decoration:none;
+	color:black;
+	background-image:url('../img/Transparent.png');
 }
-.head {
-	font-size: 20px;
-	position: absolute;
+
+/***********************************************************************
+ * VARIABLE A REMPLACER                                                *
+ * Tout ce qui possède cette class doit être changer par des variables *
+ ***********************************************************************/
+
+.toReplace{
+	color:green;
 }
-#boutique {
-	position: absolute;
-	top: 70px;
-	left: 130px;
+
+/*********************
+ * Contenu principal *
+ *********************/
+
+#header{
+	height:150px;
+	padding:10px;
 }
-#b {
-	position: absolute;
-	top: 0px;
-	left: -10px;
+
+#main{
+	padding:10px;
+}
+
+#footer{
+	height:50px;
+	text-align:center;
+	font-size:12px;
+}
+
+/******
+ * ID *
+ ******/
+
+#headLeft{
+	font-size:20px;
+	float:left;
+}
+
+#headRight{
+	float:right;
+}
+
+#infoCarrier{
+	font-size:16px;
+	float:right;
+	clear:both;
+}
+
+#infoShop{
+	font-size:14px;
+	margin-top:27px;
+	float:right;
+	clear:both;
+}
+
+#headInfoTable{
+	border-collapse:separate;
+	text-align:center;
+}
+
+#menuTable{
+	border-collapse:collapse;
+	text-align:center;
+	width:100%;
+}
+
+/*****************
+ * Class Général *
+ *****************/
+
+.alignCenter{
+	text-align:center;
+}
+
+.inlineBlock{
+	display:inline-block;
+}
+
+.marginCenter{
+	margin:0 auto;
+}
+
+.colorBlue{
 	color: #3374d5;
 }
-#menuHeader {
-	border: 1px solid #999;
-	border-collapse: separate;
-	position: absolute;
-	top: 110px;
+
+.floatLeft{
+	float:left;
 }
+
+.floatRight{
+	float:right;
+}
+
+.clearBoth{
+	clear:both;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.italic{
+	font-style:italic;
+}
+
+.verticalAlignT{
+	vertical-align:top;
+}
+
+.verticalAlignM{
+	vertical-align:middle;
+}
+
+.verticalAlignB{
+	vertical-align:bottom;
+}
+
+/*************
+ * Autres... *
+ *************/
+
+.headInfoTd{
+	background-color:#EDF2FA;
+}
+
+.menuTd{
+	border:1px solid #FA6952;
+	background-color:#FBBBB1;
+}
+
+.menuLink{
+	text-decoration:none;
+	color:black;
+}
+
+
+
+
 footer {
 	background-color: black;
 }
