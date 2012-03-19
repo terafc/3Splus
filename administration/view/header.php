@@ -20,32 +20,14 @@
 						</span>
 					</div>
 				</div>
-				<div id="headRight">
-					<div id="infoShop">
-						<table id="headInfoTable">
-							<tr>
-								<td class="headInfoTd">
-									<span class="alignCenter verticalAlignM"><?php //echo $_SESSION['user']['point'];?> Points</span>
-								</td>
-								<td class="headInfoTd">
-									<span class="toReplace">0</span> Commande
-								</td>
-								<td class="headInfoTd">
-									Panier : <span class="toReplace">0,00 €</span>
-								</td>
-							</tr>
-						</table>
-					</div>
 				</div>
 			</div>
 			<div id="menu" class="clearBoth">
 				<table id="menuTable">
 					<tr>
-						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=sandwich">Sandwich</a></td>
-						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=viennoiserie Et Chocolat">Viennoiserie & Chocolat</a></td>
-						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=salade">Salade</a></td>
-						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=glace">Glace</a></td>
-						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=boisson">Boisson</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=sandwich">Comm. en groupe</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=viennoiserie Et Chocolat">Comm. individuel</a></td>
+						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=salade">Historique</a></td>
 					</tr>
 				</table>
 			</div>	
