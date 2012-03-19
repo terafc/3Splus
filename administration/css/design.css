@@ -109,6 +109,10 @@ hr{
 	color: #3374d5;
 }
 
+.colorPink{
+	color: #3374d5;
+}
+
 .floatLeft{
 	float:left;
 }
@@ -150,12 +154,12 @@ hr{
 }
 
 .menuTd{
-	border:1px solid #FA6952;
+	border:1px solid #000000;
 	font-weight:bold;
 }
 
 .menuTdHover{
-	background-color:#FA6952;
+	background-color:#f7563c;
 }
 
 .menuLink{

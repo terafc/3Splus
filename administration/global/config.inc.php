@@ -14,6 +14,6 @@ define('HTTP_MODEL','http://'.$_SERVER['SERVER_NAME'].'/3Splus/administration/mo
 define('HTTP_CONTROLLER','http://'.$_SERVER['SERVER_NAME'].'/3Splus/administration/controller');
 define('HTTP_JS','http://'.$_SERVER['SERVER_NAME'].'/3Splus/administration/js');
 define('HTTP_CSS','http://'.$_SERVER['SERVER_NAME'].'/3Splus/administration/css');
-define('HTTP_IMG','http://'.$_SERVER['SERVER_NAME'].'/3Splus/application/img');
-define('HTTP_INDEX','http://'.$_SERVER['SERVER_NAME'].'/3Splus/administration/index.php');
+define('HTTP_IMG','http://'.$_SERVER['SERVER_NAME'].'/3Splus/administration/img');
+define('HTTP_INDEX','http://'.$_SERVER['SERVER_NAME'].'/3Splus/index.php');
 ?>
