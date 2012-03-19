@@ -3,6 +3,7 @@
 define('CHEMIN_GLOBAL', $_SERVER['DOCUMENT_ROOT'].'3Splus/application/global');
 define('CHEMIN_CONFIG', $_SERVER['DOCUMENT_ROOT'].'3Splus/application/config');
 define('CHEMIN_LIB', $_SERVER['DOCUMENT_ROOT'].'3Splus/application/lib');
+define('CHEMIN_IMG', $_SERVER['DOCUMENT_ROOT'].'3Splus/application/img');
 define('CHEMIN_VIEW',$_SERVER['DOCUMENT_ROOT'].'3Splus/application/view');
 define('CHEMIN_MODEL',$_SERVER['DOCUMENT_ROOT'].'3Splus/application/model');
 define('CHEMIN_CONTROLLER',$_SERVER['DOCUMENT_ROOT'].'3Splus/application/controller');

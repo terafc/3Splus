@@ -14,7 +14,6 @@
 	
 	//On démarre la session
 	session_start();
-
 	/*******************
 	 * Partie FACEBOOK *
 	 *******************/
@@ -53,20 +52,29 @@
 	
 	//Si l'utilisateur a validé son email de confirmation, alors VRAI, sinon FAUX 
 	$auth = user_auth($uid);
+	//Si utilisateur valide, on récupère les infos de l'utilisateur et on le stocke dans une session
+	if($auth){
+		$userCurrentInfo = user_get_info($uid);
+		$_SESSION['user'] = $userCurrentInfo[0];//On met l'index 0 à cause du fetchAll()
+	 	$_SESSION['uid'] = $uid;
+	}
 	*/
 	/**************
 	 * Partie WEB *
 	 **************/
-	
+	//POUR LES TEST
+	$_SESSION['uid']=1;
+	$tmp=user_get_info(1);
+	$_SESSION['user']=$tmp[0];
 	//if($auth){//Si l'utilisateur est authentifié
 		include_once(CHEMIN_VIEW.'/header.php');//Header
 		//On inclut le contrôleur si $_GET['page'], et $_GET['action'] est définit, et si le controller existe
 		if (!empty($_REQUEST['page'])  && 
 			!empty($_REQUEST['action']) && 
-			is_file(CHEMIN_CONTROLLER.$_REQUEST['page'].'Controller.php')
+			is_file(CHEMIN_CONTROLLER.'/'.$_REQUEST['page'].'Controller.php')
 		){
 			$action = $_REQUEST['action'];
-			include_once(CHEMIN_CONTROLLER.$_REQUEST['page'].'Controller.php');
+			include_once(CHEMIN_CONTROLLER.'/'.$_REQUEST['page'].'Controller.php');
 		}
 		elseif(!isset($_REQUEST['action']) && !isset($_REQUEST['page'])){//Si on affiche la page pour la première fois sans variables
 			include_once(CHEMIN_VIEW.'/accueil.php');
