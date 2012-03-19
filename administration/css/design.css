@@ -1,0 +1,208 @@
+/***************
+ * CSS Général * 
+ ***************/
+
+html{
+	background-image:url('../img/Sandwichs.jpg');
+}
+
+body{
+	display:block;
+	width:520px;
+	max-height:750px;
+	font-family: TrebuchetMS;
+	margin:0 auto;
+	padding:0;
+	border:none;
+	overflow:hidden;
+	text-decoration:none;
+	color:black;
+	background-image:url('../img/Transparent.png');
+}
+
+hr{
+	margin:0;
+}
+/***********************************************************************
+ * VARIABLE A REMPLACER                                                *
+ * Tout ce qui possède cette class doit être changer par des variables *
+ ***********************************************************************/
+
+.toReplace{
+	color:green;
+}
+
+/*********************
+ * Contenu principal *
+ *********************/
+
+#header{
+	height:140px;
+	padding:10px;
+}
+
+#main{
+	padding:10px;
+}
+
+#footer{
+	height:50px;
+	text-align:center;
+	font-size:12px;
+}
+
+/******
+ * ID *
+ ******/
+
+#headLeft{
+	font-size:20px;
+	float:left;
+}
+
+#headRight{
+	float:right;
+}
+
+#infoCarrier{
+	font-size:16px;
+	float:right;
+	clear:both;
+}
+
+#infoShop{
+	font-size:14px;
+	margin-top:27px;
+	float:right;
+	clear:both;
+}
+
+#headInfoTable{
+	border-collapse:separate;
+	text-align:center;
+}
+
+#menuTable{
+	border-collapse:collapse;
+	text-align:center;
+	background-color:#FBBBB1;
+	width:100%;
+}
+
+/*****************
+ * Class Général *
+ *****************/
+
+.alignCenter{
+	text-align:center;
+}
+
+.inlineBlock{
+	display:inline-block;
+}
+
+.marginCenter{
+	margin:0 auto;
+}
+
+.colorBlue{
+	color: #3374d5;
+}
+
+.colorPink{
+	color: #3374d5;
+}
+
+.floatLeft{
+	float:left;
+}
+
+.floatRight{
+	float:right;
+}
+
+.clearBoth{
+	clear:both;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.italic{
+	font-style:italic;
+}
+
+.verticalAlignT{
+	vertical-align:top;
+}
+
+.verticalAlignM{
+	vertical-align:middle;
+}
+
+.verticalAlignB{
+	vertical-align:bottom;
+}
+
+/*************
+ * Autres... *
+ *************/
+
+.headInfoTd{
+	background-color:#EDF2FA;
+}
+
+.menuTd{
+	border:1px solid #000000;
+	font-weight:bold;
+}
+
+.menuTdHover{
+	background-color:#f7563c;
+}
+
+.menuLink{
+	text-decoration:none;
+	color:black;
+}
+
+.titleCategory{
+	width:100%;
+	text-decoration:underline; 
+}
+
+.productSelect{
+	width:22%;
+	border:1px solid black;
+	display:inline-block;
+	text-align:center;
+}
+
+.productName{
+	font-size:11px;
+	width:100%;
+	border-bottom:1px solid black;
+	text-decoration:underline;
+}
+
+.productDetail{
+	font-size:10px;
+	font-weight:bold;
+	background-color:#87B3F8;
+}
+
+.imageProduct{
+	margin-top:2px;
+	text-align:center
+}
+
+.addProduct{
+	font-size:10px;
+	cursor:pointer;
+}
+
+.categoryContainer{
+	max-height:250px;
+	overflow-y:scroll;
+}
