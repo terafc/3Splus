@@ -12,8 +12,8 @@ function user_del($id_user){
 	return $count;
 }
 //Ajoute l'utilisateur dans la liste des utilisateurs interdit
+
 function blacklist($id_user) {
 	
 }
-
 ?>
