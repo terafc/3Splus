@@ -3,4 +3,3 @@
 		<span class="colorBlue">P</span>anier
 	</span>
 </div>
-Bonjour

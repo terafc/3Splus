@@ -37,11 +37,9 @@
 								<td class="headInfoTd cursorPointer">
 									<span class="toReplace">0</span> Commande
 								</td>
-								<a href="<?php echo HTTP_INDEX;?>?page=panier&action=show">
 								<td class="headInfoTd cursorPointer">
-									Panier : <span class="toReplace">0,00 €</span>
+									<a href="<?php echo HTTP_INDEX;?>?page=panier&action=show">Panier : <span class="toReplace">0,00 €</span></a>
 								</td>
-								</a>
 							</tr>
 						</table>
 					</div>
