@@ -6,7 +6,10 @@
 		<input type='text' name=''/>
 		<br/>
 		Et votre mot de passe: 
-		<br /><input type='password' name=''/>		
+		<br />
+		<input type='password' name=''/>	
+		<br />
+		<input type="submit" value="Se connecter" />	
 	</form>
 	
 </p>
