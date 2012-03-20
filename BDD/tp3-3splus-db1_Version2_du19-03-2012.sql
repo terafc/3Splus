@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.41, for debian-linux-gnu (i486)
+-- MySQL dump 10.13  Distrib 5.1.61, for debian-linux-gnu (i486)
 --
 -- Host: localhost    Database: 3SPLUS
 -- ------------------------------------------------------
--- Server version	5.1.41-3ubuntu12.10
+-- Server version	5.1.61-0ubuntu0.10.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -153,7 +153,7 @@ CREATE TABLE `products` (
   `price` float NOT NULL,
   `id_category` int(11) NOT NULL,
   PRIMARY KEY (`id_product`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +162,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (7,'pain bouchon','pain bouchon poulet',2,1),(6,'americain','americain jambon',2.5,1),(10,'thon maÃ¯s','pain thon maÃ¯s',1.5,6),(11,'pain poulet','pain poulet',1.5,6),(12,'coca','coca-cola canette',1,5);
+INSERT INTO `products` VALUES (7,'pain bouchon','pain bouchon poulet',2,1),(6,'americain','americain jambon',2.5,1),(13,'thon mais','pain thon mais',1.5,6),(14,'fanta','fanta orange',1.5,5),(11,'pain poulet','pain poulet',1.5,6),(12,'coca','coca-cola canette',1,5),(15,'glace baton','glace baton chocolat vanille',2,4),(16,'glace cornet','glace cornet fraise',2,4),(17,'pain au chocolat','petit pain au chocolat',1.3,2),(18,'croissant','petit croissant',1,2),(19,'salade verte','salade verte sans sauce',1,3),(20,'salade de pates','salade de pates et cruditÃ©s',2,3);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-03-19 20:45:54
+-- Dump completed on 2012-03-20 14:27:07
