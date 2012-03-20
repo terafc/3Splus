@@ -208,3 +208,10 @@ hr{
 .margintop85{
 	margin-top:85px;
 }
+.groupe{
+	border-collapse: collapse;	
+}
+.cadre{
+	border:1px solid black;
+	background-color:#ccdafe;
+}
