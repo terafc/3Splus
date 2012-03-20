@@ -1,0 +1,29 @@
+body
+{
+	color:grey;
+	background-image: url("index2.jpg");
+   	background-attachment: fixed; /* Le fond restera fixe */
+    	background-repeat: repeat;  /* Le fond ne sera pas répété */
+    /* Le fond sera placé en haut à droite */
+	font-family:"Trebuchet ms",Georgia,Serif;
+	border:outset 5px #736773;
+	-moz-border-radius: 21px;
+	-webkit-border-radius: 21px;
+	border-radius: 21px;
+	text-shadow:10px 5px 2px #1a161a;
+}
+.zoom {
+height:400px;
+}
+.zoom p {
+text-align:center;
+}
+.zoom img {
+width:200px;
+height:267px;
+}
+.zoom img:hover {
+width:300px;
+height:400px;
+}
+
