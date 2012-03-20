@@ -30,15 +30,12 @@ else {
 	}
 	//Sinon si l'utilisateur est logé on indique une erreur 404
 	elseif (isset($_SESSION['login'])) {
-		header('Location:'.HTTP_INDEX.'?page=commande&action=show');
+		header('Location:'.HTTP_INDEX.'?page=commandes&action=show');
 	}
 	//Sinon on le redirige vers la page de login
 	else {
 		$action = "show";
 		include_once (CHEMIN_CONTROLLER . '/loginController.php');
 	}
-}
-if (isset($_SESSION['login'])) {
-	include_once (CHEMIN_VIEW . '/footer.php');
 }
 ?>

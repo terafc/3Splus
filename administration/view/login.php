@@ -1,4 +1,7 @@
 <?php
+
+//LE LOGIN PAR DEFAUT EST "1" ET LE MOT DE PASSE EST "ADMIN"
+
 //Permet de rediriger vers la bonne vue (non autorisée) selon le contenu de la variable redirect
 if(!empty($redirect)){
 	echo $redirect;

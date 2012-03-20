@@ -10,7 +10,7 @@ switch($action)
 			foreach ($login as $key => $value) {
 				$_SESSION['login'][$key] = $value;
 			}
-			$url = HTTP_INDEX . '?page=commande&action=show';
+			$url = HTTP_INDEX . '?page=commandes&action=show';
 			$redirect = '<script>document.location.href="' . $url . '";</script>';
 		}
 		else {

@@ -6,7 +6,7 @@
 body{
 	display:block;
 	width:955px;
-	font-family: TrebuchetMS;
+	font-family: "Trebuchet MS";
 	margin:0 auto;
 	padding:0;
 	border:none;
@@ -15,6 +15,7 @@ body{
 	color:black;
 	background-image:url('../img/Transparent.png');
 	font-size: 20px;
+	overflow:scroll;
 }
 
 hr{
@@ -137,7 +138,7 @@ hr{
 
 .bold{
 	font-weight:bold;
-	font-size: 35px;
+	font-size: 40px;
 }
 
 .italic{
@@ -227,17 +228,48 @@ hr{
 	float: inherit;	
 }
 .cadrehead{
-	border:2px solid black;
+	border:2px solid #404080;
 	background-color:#ccdafe;
+	color:#404080;
 }
 .cadreimpaire{
 	background-color:#c1f7aa;
-	border:2px solid black;
+	border:2px solid #004000;
+	font-weight:bold;
 }
 .cadrepaire{
 	background-color:#99ad99;
-	border:2px solid black;
+	border:2px solid #004000;
 }
 .raw{
-	border:1px solid black;
+	border:1px solid #004000;
+}
+
+.margecadre{
+	margin-top:50px;
+}
+
+.menuleft{
+	background-color:#ccdafe;
+	width:100px;
+	height:650px;
+	float:left;
+	margin-right:50px;
+}
+
+.textmenuleft{
+	vertical-align:text-top;
+	color:#0000ff;
+	font-size:15px;
+}
+
+.titremenuleft{
+	vertical-align:text-top;
+	color:#0000ff;
+	font-size:20px;
+	line-height:50px;
+}
+
+.col1{
+	color:#004000;
 }
