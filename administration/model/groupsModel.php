@@ -23,14 +23,9 @@ function group_del($id_group)  {
 }
 
 //Permet d'obtenir la liste distincte des groupes (id)
-function group_getDistinct($id='*'){
+function group_getDistinct(){
 	$bdd = Database3Splus::getinstance();  //connexion();
-	if($id=='*'){
-		$req = "SELECT DISTINCT * from groups";
-	}
-	else{
-		$req = "SELECT DISTINCT * FROM groups where id_group=$id";
-	}
+	$req = "SELECT DISTINCT id_group FROM groups";
 	$result = $bdd->prepare($req);
 	$result->execute();
 	$groups = $result->fetchAll();
