@@ -3,7 +3,7 @@
  ***************/
 
 html{
-	background-color: #0099CC;
+	background-image:url('../img/Sandwichs.jpg');
 }
 
 body{
@@ -22,27 +22,6 @@ body{
 
 hr{
 	margin:0;
-}
-
-#welcome{
-	text-shadow: 1px 1px 1px #000;
-	font-family: "Cambria",sans-serif;
-	font-size: 20px;
-}
-
-.text_welcome{
-	font-family: "Trebuchet MS",sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: bold;
-    display : inline-block;
-    color: black;
-    text-decoration : none;	
-    padding : 2px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#045FB4));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
 }
 /***********************************************************************
  * VARIABLE A REMPLACER                                                *
@@ -130,6 +109,10 @@ hr{
 	color: #3374d5;
 }
 
+.colorPink{
+	color: #3374d5;
+}
+
 .floatLeft{
 	float:left;
 }
@@ -171,12 +154,12 @@ hr{
 }
 
 .menuTd{
-	border:1px solid #FA6952;
+	border:1px solid #000000;
 	font-weight:bold;
 }
 
 .menuTdHover{
-	background-color:#FA6952;
+	background-color:#f7563c;
 }
 
 .menuLink{
