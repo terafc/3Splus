@@ -34,12 +34,14 @@
 									<span class="alignCenter verticalAlignM"><?php //echo $_SESSION['user']['point'];?> Points</span>
 									<img class="inlineBlock alignCenter verticalAlignM" alt="Star" src="<?php echo HTTP_IMG;?>/Star.png">
 								</td>
-								<td class="headInfoTd">
+								<td class="headInfoTd cursorPointer">
 									<span class="toReplace">0</span> Commande
 								</td>
-								<td class="headInfoTd">
+								<a href="<?php echo HTTP_INDEX;?>?page=panier&action=show">
+								<td class="headInfoTd cursorPointer">
 									Panier : <span class="toReplace">0,00 €</span>
 								</td>
+								</a>
 							</tr>
 						</table>
 					</div>
