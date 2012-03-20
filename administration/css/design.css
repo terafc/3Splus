@@ -14,6 +14,7 @@ body{
 	text-decoration:none;
 	color:black;
 	background-image:url('../img/Transparent.png');
+	font-size: 20px;
 }
 
 hr{
@@ -110,6 +111,18 @@ hr{
 	color: #f7563c;
 }
 
+.colorRed{
+	color: #ff0000;
+}
+
+.colorYellow{
+	color: #ffff00;
+}
+
+.colorBrown{
+	color: #580400;
+}
+
 .floatLeft{
 	float:left;
 }
@@ -124,6 +137,7 @@ hr{
 
 .bold{
 	font-weight:bold;
+	font-size: 35px;
 }
 
 .italic{
@@ -209,9 +223,21 @@ hr{
 	margin-top:85px;
 }
 .groupe{
-	border-collapse: collapse;	
+	border-collapse: collapse;
+	float: inherit;	
 }
-.cadre{
-	border:1px solid black;
+.cadrehead{
+	border:2px solid black;
 	background-color:#ccdafe;
+}
+.cadreimpaire{
+	background-color:#c1f7aa;
+	border:2px solid black;
+}
+.cadrepaire{
+	background-color:#99ad99;
+	border:2px solid black;
+}
+.raw{
+	border:1px solid black;
 }

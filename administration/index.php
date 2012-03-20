@@ -25,7 +25,7 @@
 			include_once(CHEMIN_CONTROLLER.'/'.$_REQUEST['page'].'Controller.php');
 		}
 		elseif(!isset($_REQUEST['action']) && !isset($_REQUEST['page'])){//Si on affiche la page pour la première fois sans variables
-			include_once(CHEMIN_VIEW.'/login.php');
+			include_once(CHEMIN_VIEW.'/commande.php');
 		}
 		else{
 			include_once(CHEMIN_VIEW.'/404.php');//Erreur 404
