@@ -5,7 +5,8 @@
 	echo "N° Commande: ";
 	echo "
 		<form methode=POST, action=''>
-		<input type='checkbox' name='cmdvalider'>";
+		<input type='submit' name='cmdvalider' value='Valider la commande'>
+		</form>";
 	
 	echo"
 	<table class='groupe'>
