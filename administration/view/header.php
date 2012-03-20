@@ -11,26 +11,27 @@
 	<body>
 	    <div id ="header">
 			<div class="clearBoth">
-				<div id="headLeft">
+				<div class="floatLeft">
 					<img class="inlineBlock" alt="Logo" src="<?php echo HTTP_IMG;?>/Logo.png">
 					<div class="inlineBlock verticalAlignB">
 						<span class="bold">
 							<span class="colorBlue">P</span>ersonel
-							<span class="colorBlue">C</span>rous
+							<span class="colorPink">C</span>rous
 						</span>
 					</div>
 				</div>
-				</div>
-			</div>
-			<div id="menu" class="clearBoth">
-				<table id="menuTable">
-					<tr>
+				<div id="menu" class="floatRight margintop85">
+					<table id="menuTable">
+						<tr>
 						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=sandwich">Comm. en groupe</a></td>
 						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=viennoiserie Et Chocolat">Comm. individuel</a></td>
 						<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show&what=salade">Historique</a></td>
-					</tr>
-				</table>
-			</div>	
+						</tr>
+					</table>
+				</div>	
+				</div>
+			</div>
+			
 		</div>
 		<hr/>
 	    <div id="main">

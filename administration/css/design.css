@@ -2,14 +2,10 @@
  * CSS Général * 
  ***************/
 
-html{
-	background-image:url('../img/Sandwichs.jpg');
-}
 
 body{
 	display:block;
-	width:520px;
-	max-height:750px;
+	width:1024px;
 	font-family: TrebuchetMS;
 	margin:0 auto;
 	padding:0;
@@ -87,6 +83,7 @@ hr{
 	text-align:center;
 	background-color:#FBBBB1;
 	width:100%;
+	text-align:center;
 }
 
 /*****************
@@ -110,7 +107,7 @@ hr{
 }
 
 .colorPink{
-	color: #3374d5;
+	color: #f7563c;
 }
 
 .floatLeft{
@@ -165,6 +162,7 @@ hr{
 .menuLink{
 	text-decoration:none;
 	color:black;
+	float:right;
 }
 
 .titleCategory{
@@ -205,4 +203,15 @@ hr{
 .categoryContainer{
 	max-height:250px;
 	overflow-y:scroll;
+}
+
+.margintop85{
+	margin-top:85px;
+}
+.groupe{
+	border-collapse: collapse;	
+}
+.cadre{
+	border:1px solid black;
+	background-color:#ccdafe;
 }
