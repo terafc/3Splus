@@ -3,7 +3,7 @@
 	function getImageProduct($value){
 		$alt = "Image Produit";
 		$title = empty($value['description']) ? "Aucune description disponible.":$value['description'];
-		if(is_file(CHEMIN_IMG."/".$value['name'].".png")){
+		if(is_file(CHEMIN_IMG."/product/".$value['name'].".png")){
 			$src = HTTP_IMG."/product/".$value['name'].".png";
 			$img = "<img src=\"".$src."\" alt=\"".$alt."\" title=\"".$title."\"/>";
 		}
