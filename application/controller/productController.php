@@ -37,8 +37,9 @@
 		case "add":
 			require_once(CHEMIN_MODEL."/productModel.php");
 			require_once(CHEMIN_MODEL."/ordersModel.php");
+			$what = $_REQUEST['what'];
 			//On vérifie si il s'agit d'un cas particulier (sauces pour les sandwichs)
-			if($_REQUEST['what']=='sandwich' && isset($_REQUEST['sauce'])){
+			if($what=='sandwich' && isset($_REQUEST['sauce'])){
 				$sauce = implode(',',$_REQUEST['sauce']);//On concatène toutes les sauces avec des virgules
 			}
 			else{
@@ -57,18 +58,8 @@
 					$error = "Impossible d'ajouter le produit au panier !";
 				}
 			}else{$error = "Le produit demandé n'existe pas !";}
-			if(isset($error)){//Si il y a eu une erreur
-				$message = $error;
-				include_once(CHEMIN_VIEW."/messRedirection.php");
-			}
-			else{//Sinon l'ajout est confirmé, on rafraîchi la page pour mettre à jour le panier.
-				//Redirection JS
-				$url = "https://www.facebook.com/pages/3S/358542484156862?sk=app_311576688896685";
-				$time = 2000;
-				$message = "Produit ajouté ! Redirection...";
-				//$script = "<script>window.setTimeout(\"location=('".$url."');\",".$time.");</script>";
-				include_once(CHEMIN_VIEW."/messRedirection.php");
-			}
+			$message = isset($error) ? $error : "Produit ajouté au Panier !";
+			header('Location: '.HTTP_INDEX.'?page='.$page.'&action=show&what='.$what.'&message='.$message);  
 			break;
 		default:
 			include_once(CHEMIN_VIEW."/404.php");
