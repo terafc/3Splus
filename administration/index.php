@@ -18,10 +18,10 @@ include_once (CHEMIN_VIEW . '/header.php');
 //Header
 //On inclut le contrôleur si $_GET['page'], et $_GET['action'] est définit, et si le controller existe
 
-if (!isset($_SESSION['login'])) {
+/*if (!isset($_SESSION['login'])) {
 	header("Location: " . HTTP_INDEX . "?page=login&action=show");
 }
-else {
+else {*/
 	if (!empty($_REQUEST['page'])) {
 		$action = $_REQUEST['action'];
 		include_once (CHEMIN_CONTROLLER . '/' . $_REQUEST['page'] . 'Controller.php');
@@ -35,7 +35,7 @@ else {
 		$action = "show";
 		include_once (CHEMIN_CONTROLLER . '/loginController.php');
 	}
-}
+//}
 include_once (CHEMIN_VIEW . '/footer.php');
 //Footer
 	/****************************************************
