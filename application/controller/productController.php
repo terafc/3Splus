@@ -30,6 +30,7 @@
 			}
 			//Sinon on affiche la vue
 			else{
+				if(isset($_REQUEST['message'])){$message = $_REQUEST['message'];}//Ajout du message si existe
 				include_once(CHEMIN_VIEW."/product.php");
 			}
 			break;
@@ -59,6 +60,7 @@
 				}
 			}else{$error = "Le produit demandé n'existe pas !";}
 			$message = isset($error) ? $error : "Produit ajouté au Panier !";
+			echo $message;
 			header('Location: '.HTTP_INDEX.'?page='.$page.'&action=show&what='.$what.'&message='.$message);  
 			break;
 		default:

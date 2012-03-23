@@ -8,12 +8,10 @@ html {
 body {
 	display: block;
 	width: 520px;
-	max-height: 750px;
-	font-family: TrebuchetMS;
+	font-family: "TrebuchetMS";
 	margin: 0 auto;
 	padding: 0;
 	border: none;
-	overflow: hidden;
 	text-decoration: none;
 	color: black;
 	background-image: url('../img/Transparent.png');
