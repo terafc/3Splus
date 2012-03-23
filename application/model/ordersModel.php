@@ -39,7 +39,7 @@
 		$result->execute();
 		$result2=$result->fetchAll();
 		if (!empty($result2)){
-			return $result2;	
+			return $result2[0];	
 		}else{
 			return FALSE;
 		}
@@ -55,6 +55,8 @@
 		$result->bindParam(':id_product', $id_product);
 		$result->bindParam(':amount', $amount);
 		$result->execute();
+		$count = $result->rowCount();
+		return $count;
 	}
 	
 	//Permet de valider une commande (après paiement paypal)
@@ -67,7 +69,7 @@
 		$result->execute();
 	}
 
-	//Permet de récupéré la liste id_product,amount d'une commande
+	//Permet de récupéré la liste des produits d'une commande
 	function get_info_order($id_order){
 		$bdd = Database3Splus::getinstance();//connexion();
 		$req = "select id_product.OD,amount.OD,sauce.OD from order_details OD,orders O  where id_order.O=id_order.OD and id_order.OD=:id_order and paid.O=0";
@@ -81,6 +83,23 @@
 			return FALSE;
 		}
 	}
+	
+	//Permet de récupéré la liste des produits de toutes les commandes d'un utilisateur
+	function get_all_info_order($id_user){
+		$bdd = Database3Splus::getinstance();//connexion();
+		$req = "select id_order.OD,id_product.OD,amount.OD,sauce.OD from order_details OD,orders O  where id_order.O=id_order.OD and id_user.O=:id_user and paid.O=1";
+		$result = $bdd->prepare($req);
+		$result->bindParam(':id_order', $id_order);
+		$result->execute();
+		$result2=$result->fetchAll();
+		if (!empty($result2)){
+			return $result2;	
+		}else{
+			return FALSE;
+		}
+	}
+	
+	
 
 	
 ?>

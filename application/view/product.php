@@ -13,8 +13,11 @@
 		}
 		return $img;
 	}
+?>
 
-	$i=0;
+<?php
+	if(isset($message)){echo "<div>".$message."</div>";}//Affichage du message si existe
+	//On affiche chaque catégorie de produit
 	foreach($product as $productListe){?>
 		<div class="categoryContainer">
 			<h3 class='titleCategory'><?php echo ucfirst(strtolower($productListe['name_category']));?></h3>

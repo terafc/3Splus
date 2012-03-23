@@ -37,7 +37,7 @@
 		$uid = $fb->getUser();
 		// On récupère les infos de base de l'utilisateur
 		$user = $fb->api('/me');
-			}
+	}
 	// S'il y'a un problème lors de la récup, perte de session entre temps, suppression des autorisations...
 	catch (FacebookApiException $e) {
 		// On récupère l'URL sur laquelle on devra rediriger l'utilisateur pour le réidentifier sur l'application
@@ -56,7 +56,16 @@
 	if($auth){
 		$userCurrentInfo = user_get_info($uid);
 		$_SESSION['user'] = $userCurrentInfo[0];//On met l'index 0 à cause du fetchAll()
+	 	$_SESSION['user_facebook'] = $user;
 	 	$_SESSION['uid'] = $uid;
+		//On récupère l'id _order non payé d'un utilisateur, sinon on en génère un nouveau
+		$id_order = verif_user_order($_SESSION['user']);
+		if($id_order){
+			$_SESSION['id_order'] = $id_order;//Index 0 à cause du fetchAll()
+		}
+		else{
+			$_SESSION['id_order'] = create_id_order($_SESSION['id_order']);
+		}
 	}
 	*/
 	/**************
@@ -66,6 +75,25 @@
 	$_SESSION['uid']=1;
 	$tmp=user_get_info(1);
 	$_SESSION['user']=$tmp[0];
+	$_SESSION['orders'] = get_all_info_order($_SESSION['user']['id_user']);
+	$_SESSION['currentOrder'];
+	//On récupère l'id _order non payé d'un utilisateur, sinon on en génère un nouveau
+	$test = verif_user_order($_SESSION['user']['id_user']);
+	if($test){
+		$_SESSION['id_order'] = $test;		
+		$order[] = get_info_order($id_order);//Liste des produits et quantité des produits du panier
+		foreach ($order as $key => $value) {
+			$info_product = get_info_product($value['id_product']);//Permet de récupéré le nom, et le prix du produit
+			//On ajoute à l'array les infos du produit
+			$order[$key]['name'] = $info_product['name'];
+			$order[$key]['price'] = $info_product['price'];
+		}
+		$_SESSION['currentOrder'] = $order;
+	}
+	else{
+		$_SESSION['id_order'] = create_id_order($_SESSION['user']['id_user']);
+	}
+	
 	//if($auth){//Si l'utilisateur est authentifié
 		include_once(CHEMIN_VIEW.'/header.php');//Header
 		//On inclut le contrôleur si $_GET['page'], et $_GET['action'] est définit, et si le controller existe
@@ -74,6 +102,7 @@
 			is_file(CHEMIN_CONTROLLER.'/'.$_REQUEST['page'].'Controller.php')
 		){
 			$action = $_REQUEST['action'];
+			$page = $_REQUEST['page'];
 			include_once(CHEMIN_CONTROLLER.'/'.$_REQUEST['page'].'Controller.php');
 		}
 		elseif(!isset($_REQUEST['action']) && !isset($_REQUEST['page'])){//Si on affiche la page pour la première fois sans variables
