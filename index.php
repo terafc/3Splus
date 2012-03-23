@@ -7,6 +7,7 @@
 	require_once("./application/global/config.inc.php");
 	require_once("./application/global/Database.php");
 	require_once(CHEMIN_MODEL."/usersModel.php");
+	require_once(CHEMIN_MODEL."/ordersModel.php");
 	
 	// On charge la config et les librairies FB
 	require_once(CHEMIN_CONFIG.'/config.php');
@@ -76,7 +77,7 @@
 	$tmp=user_get_info(1);
 	$_SESSION['user']=$tmp[0];
 	$_SESSION['orders'] = get_all_info_order($_SESSION['user']['id_user']);
-	$_SESSION['currentOrder'];
+	$_SESSION['currentOrder'] = "";
 	//On récupère l'id _order non payé d'un utilisateur, sinon on en génère un nouveau
 	$test = verif_user_order($_SESSION['user']['id_user']);
 	if($test){

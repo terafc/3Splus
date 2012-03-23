@@ -89,7 +89,7 @@
 		$bdd = Database3Splus::getinstance();//connexion();
 		$req = "select id_order.OD,id_product.OD,amount.OD,sauce.OD from order_details OD,orders O  where id_order.O=id_order.OD and id_user.O=:id_user and paid.O=1";
 		$result = $bdd->prepare($req);
-		$result->bindParam(':id_order', $id_order);
+		$result->bindParam(':id_user', $id_user);
 		$result->execute();
 		$result2=$result->fetchAll();
 		if (!empty($result2)){
