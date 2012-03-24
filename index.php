@@ -3,18 +3,20 @@
 	 * Configuration minimum requise pour l'application *
 	 ****************************************************/
 	
+	//On démarre la session
+	session_start();
+	
 	//On intègre les fichiers de configuration pour la connexion à la BDD
 	require_once("./application/global/config.inc.php");
 	require_once("./application/global/Database.php");
 	require_once(CHEMIN_MODEL."/usersModel.php");
 	require_once(CHEMIN_MODEL."/ordersModel.php");
+	require_once(CHEMIN_MODEL."/productModel.php");
 	
 	// On charge la config et les librairies FB
 	require_once(CHEMIN_CONFIG.'/config.php');
 	require_once(CHEMIN_LIB.'/facebook.php');
 	
-	//On démarre la session
-	session_start();
 	/*******************
 	 * Partie FACEBOOK *
 	 *******************/
@@ -81,18 +83,23 @@
 	//On récupère l'id _order non payé d'un utilisateur, sinon on en génère un nouveau
 	$test = verif_user_order($_SESSION['user']['id_user']);
 	if($test){
-		$_SESSION['id_order'] = $test;		
-		$order[] = get_info_order($id_order);//Liste des produits et quantité des produits du panier
-		foreach ($order as $key => $value) {
-			$info_product = get_info_product($value['id_product']);//Permet de récupéré le nom, et le prix du produit
-			//On ajoute à l'array les infos du produit
-			$order[$key]['name'] = $info_product['name'];
-			$order[$key]['price'] = $info_product['price'];
+		$_SESSION['id_order'] = $test['id_order'];
+		$totalPrice = 0;//Prix par défaut du panier
+		$order = get_info_order($_SESSION['id_order']);//Liste des produits et quantité des produits du panier
+		if(!empty($order)){
+			foreach ($order as $key => $value) {
+				$info_product = get_info_product($value['id_product']);//Permet de récupéré le nom, et le prix du produit
+				//On ajoute à l'array les infos du produit
+				$order[$key]['name'] = $info_product['name'];
+				$order[$key]['price'] = $info_product['price'];
+				$totalPrice += $info_product['price'] * $order[$key]['amount'];//On ajoute le prix du produit au montant total
+			}
 		}
 		$_SESSION['currentOrder'] = $order;
 	}
 	else{
 		$_SESSION['id_order'] = create_id_order($_SESSION['user']['id_user']);
+		$totalPrice = 0;
 	}
 	
 	//if($auth){//Si l'utilisateur est authentifié

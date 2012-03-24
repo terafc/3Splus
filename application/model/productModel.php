@@ -34,7 +34,7 @@
 	//Permet d'obtenir la liste des infos d'un produit
 	function get_info_product($id_product){
 		$bdd = Database3Splus::getinstance();//connexion();
-		$res = "select name,price from products where id_product=:id_product";
+		$req = "select name,price from products where id_product=:id_product";
 		$result = $bdd->prepare($req);
 		$result->bindParam(':id_product', $id_product);
 		$result->execute();

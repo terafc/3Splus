@@ -4,6 +4,7 @@
 
 html {
 	background-color: #0099CC;
+	font-size:16px;
 }
 body {
 	display: block;
@@ -19,24 +20,7 @@ body {
 hr {
 	margin: 0;
 }
-#welcome {
-	text-shadow: 4px 2px 5px #000000;
-	font-family: "Cambria", sans-serif;
-	font-size: 20px;
-}
-.text_welcome {
-	font-family: "Trebuchet MS", sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	font-weight: bold;
-	display: inline-block;
-	color: black;
-	text-decoration: none;
-	padding: 2px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#045FB4));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
+
 /***********************************************************************
  * VARIABLE A REMPLACER                                                *
  * Tout ce qui possède cette class doit être changer par des variables *
@@ -45,10 +29,10 @@ hr {
 .toReplace {
 	color: green;
 }
+
 /*********************
  * Contenu principal *
  *********************/
-
 #header {
 	height: 140px;
 	padding: 10px;
@@ -61,6 +45,12 @@ hr {
 	text-align: center;
 	font-size: 12px;
 }
+#welcome {
+	text-shadow: 4px 2px 5px #000000;
+	font-family: "Cambria", sans-serif;
+	font-size: 20px;
+}
+
 /******
  * ID *
  ******/
@@ -93,6 +83,11 @@ hr {
 	background-color: #FBBBB1;
 	width: 100%;
 }
+
+#panierTable{
+	border-collapse: collapse;
+	width: 100%;
+}
 /*****************
  * Class Général *
  *****************/
@@ -102,6 +97,12 @@ hr {
 }
 .alignCenter {
 	text-align: center;
+}
+.alignLeft {
+	text-align: left;
+}
+.alignRight {
+	text-align: right;
 }
 .inlineBlock {
 	display: inline-block;
@@ -136,10 +137,24 @@ hr {
 .verticalAlignB {
 	vertical-align: bottom;
 }
+
 /*************
  * Autres... *
  *************/
 
+.text_welcome {
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	padding: 2px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#045FB4));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 .headInfoTd {
 	background-color: rgba(0, 209, 255, 0.4);
 	border: inherit 5px #000000;
@@ -162,6 +177,18 @@ hr {
 }
 .menuTdHover {
 	background-color: #FA6952;
+}
+.panierTd {
+	border: 1px solid gray;
+	background-color: #D3D3D3;
+}
+.panierTh {
+	border: 1px solid gray;
+	background-color: rgba(0, 209, 255, 0.4);
+	font-weight: bold;
+}
+.inputAmountPanier{
+	width:60px;
 }
 .menuLink {
 	text-decoration: none;
@@ -199,4 +226,14 @@ hr {
 .categoryContainer {
 	max-height: 250px;
 	overflow-y: scroll;
+}
+.infoOrder{
+	font-size:11px;
+	color:red;
+}
+.actualizePanier{
+	width:40%;
+}
+.confirmPanier{
+	width:40%;
 }
