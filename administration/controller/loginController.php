@@ -1,6 +1,5 @@
 <?php
-switch($action)
-{
+switch($_REQUEST['action']){
 	case 'auth' :
 		include_once ("./model/loginModel.php");
 		//Fait appel à la fonction auth pour vérifier que l'utilisateur est autorisé
@@ -20,7 +19,9 @@ switch($action)
 		include_once (CHEMIN_VIEW . '/login.php');
 		break;
 	case 'show' :
+		include_once (CHEMIN_VIEW . '/header.php');
 		include_once (CHEMIN_VIEW . '/login.php');
+		include_once (CHEMIN_VIEW . '/footer.php');
 		break;
 	case 'logout':
 		session_destroy();
