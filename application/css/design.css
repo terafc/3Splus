@@ -156,7 +156,7 @@ hr {
 	-webkit-text-fill-color: transparent;
 }
 .headInfoTd {
-	background-color: rgba(0, 209, 255, 0.4);
+	background-color: #8DE7FC;
 	border: inherit 5px #000000;
 	-moz-border-radius-topleft: 4px;
 	-moz-border-radius-topright: 4px;
@@ -184,7 +184,7 @@ hr {
 }
 .panierTh {
 	border: 1px solid gray;
-	background-color: rgba(0, 209, 255, 0.4);
+	background-color: #8DE7FC;
 	font-weight: bold;
 }
 .inputAmountPanier{
@@ -208,6 +208,7 @@ hr {
 	font-size: 11px;
 	width: 100%;
 	border-bottom: 1px solid black;
+	background-color: #8DE7FC;
 	text-decoration: underline;
 }
 .productDetail {

@@ -4,6 +4,7 @@
 		<title>3S+</title>
 		<meta charset="UTF-8"/>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/> 
+		<link rel="shortcut icon" href="<?php echo HTTP_IMG;?>/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS;?>/design.css"/>
 		<script src="<?php echo HTTP_JS;?>/jquery-1.7.1.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="<?php echo HTTP_JS;?>/function.js"></script>
