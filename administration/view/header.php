@@ -30,7 +30,9 @@
 		</div>
 		</div>
 		<hr/>
+		<?php if(isset($_SESSION['login'])){ ?>
 		<form action="index.php?page=login&action=logout" method='post'>
 			<input type='submit' value='Deconnexion'>
 		</form>
+		<?php } ?>
 		<div id="main">

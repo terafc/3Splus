@@ -20,6 +20,11 @@ SET time_zone = "+00:00";
 -- Base de données: `3splus`
 --
 
+CREATE DATABASE IF NOT EXISTS 3splus;
+
+USE 3splus;
+
+
 -- --------------------------------------------------------
 
 --
