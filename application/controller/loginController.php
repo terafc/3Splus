@@ -57,14 +57,14 @@
 						$url = "https://www.facebook.com/pages/3S/358542484156862?sk=app_311576688896685";
 						$time = 2000;
 						$message = "Authentification réussi ! Redirection...";
-						//$script = "<script>window.setTimeout(\"location=('".$url."');\",".$time.");</script>";
+						$script = "<script>window.setTimeout(\"location=('".$url."');\",".$time.");</script>";
 					}
 					else{
 						$message = "Erreur : Cette email a déjà été valider sur un compte FB.";
 					}
 				}
 				else{
-					$message = "2C'est pas bien d'essayer de modifier l'url... ";
+					$message = "C'est pas bien d'essayer de modifier l'url... ";
 				}
 			}
 			else{

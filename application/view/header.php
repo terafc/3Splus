@@ -4,6 +4,7 @@
 		<title>3S+</title>
 		<meta charset="UTF-8"/>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/> 
+		<link rel="shortcut icon" href="<?php echo HTTP_IMG;?>/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS;?>/design.css"/>
 		<script src="<?php echo HTTP_JS;?>/jquery-1.7.1.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="<?php echo HTTP_JS;?>/function.js"></script>
@@ -31,14 +32,14 @@
 						<table id="headInfoTable">
 							<tr>
 								<td class="headInfoTd">
-									<span class="alignCenter verticalAlignM"><?php //echo $_SESSION['user']['point'];?> Points</span>
+									<span class="alignCenter verticalAlignM"><?php echo $_SESSION['user']['point'];?> Points</span>
 									<img class="inlineBlock alignCenter verticalAlignM" alt="Star" src="<?php echo HTTP_IMG;?>/Star.png">
 								</td>
 								<td class="headInfoTd cursorPointer">
-									<span class="toReplace">0</span> Commande
+									<a href="<?php echo HTTP_INDEX;?>?page=order&action=order"><span class="colorBlue"><?php echo $nbrOrder;?></span> Commande</a>
 								</td>
 								<td class="headInfoTd cursorPointer">
-									<a href="<?php echo HTTP_INDEX;?>?page=panier&action=show">Panier : <span class="toReplace">0,00 €</span></a>
+									<a href="<?php echo HTTP_INDEX;?>?page=order&action=panier">Panier : <span class="colorBlue"><?php echo $totalPrice;?> €</span></a>
 								</td>
 							</tr>
 						</table>

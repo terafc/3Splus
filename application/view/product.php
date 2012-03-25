@@ -29,7 +29,7 @@
 				foreach($productListe as $key=>$value){?>
 					<div class="productSelect">
 						<form method="POST" action="<?php echo HTTP_INDEX;?>?page=product&action=add">
-							<div class="productName"><?php echo ucfirst(strtolower($value['name']));?></div>
+							<div class="productName bold"><?php echo ucfirst(strtolower($value['name']));?></div>
 							<div class="imageProduct">
 								<?php
 									//On affiche l'image si elle existe, sinon on affiche une image par défaut
