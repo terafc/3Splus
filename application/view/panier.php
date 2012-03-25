@@ -26,7 +26,7 @@
 							</td>
 							<td class="panierTd alignCenter"><input class="inputAmountPanier alignRight" type="text" name="amount<?php echo $i;?>" value="<?php echo $value['amount'];?>"/></td>
 							<td class="panierTd alignRight"><?php echo $value['price'];?> €</td>
-							<td class="panierTd alignCenter cursorPointer"><a href = "<?php echo HTTP_INDEX."?page=order&action=delete&id_product=".$value['id_product'];?>">Supprimer</a></td>
+							<td class="panierTd alignCenter cursorPointer"><a href = "<?php echo HTTP_INDEX."?page=order&action=delete&id_product=".$value['id_product']."&sauce=".$value['sauce'];?>">Supprimer</a></td>
 						</tr>
 					<?php 
 						$i++;
@@ -44,7 +44,7 @@
 		<br/>
 		<div class="inlineBlock confirmPanier">
 			<form method="POST" action="<?php echo HTTP_INDEX."?page=order&action=confirm";?>">
-				<input type="submit" value="Confirmer"/>
+				<input type="submit" value="Payer"/>
 			</form>
 		</div>
 	</div>

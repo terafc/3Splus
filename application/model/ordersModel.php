@@ -41,12 +41,13 @@
 	}
 	
 	//Permet de supprimer un produit du panier
-	function del_product_of_order($id_order,$id_product){
+	function del_product_of_order($id_order,$id_product,$sauce){
         $bdd = Database3Splus::getinstance();//connexion();
-        $req = "DELETE FROM order_details WHERE id_order = :id_order AND id_product = :id_product";
+        $req = "DELETE FROM order_details WHERE id_order = :id_order AND id_product = :id_product AND sauce = :sauce";
         $result = $bdd->prepare($req);
         $result->bindParam(':id_order', $id_order);
         $result->bindParam(':id_product', $id_product);
+        $result->bindParam(':sauce', $sauce);
         $result->execute();
         $count = $result->rowCount();
 		if($count != 0){return TRUE;}
@@ -111,7 +112,7 @@
 	//Permet de récupéré la liste des produits d'une commande
 	function get_info_order($id_order){
 		$bdd = Database3Splus::getinstance();//connexion();
-		$req = "SELECT OD.id_product,OD.amount,OD.sauce FROM order_details OD,orders O  WHERE O.id_order=OD.id_order AND OD.id_order=:id_order AND O.paid=0";
+		$req = "SELECT OD.id_product,OD.amount,OD.sauce FROM order_details OD,orders O  WHERE O.id_order=OD.id_order AND OD.id_order=:id_order";
 		$result = $bdd->prepare($req);
 		$result->bindParam(':id_order', $id_order);
 		$result->execute();
@@ -123,17 +124,19 @@
 		}
 	}
 	
-	//Permet de récupéré la liste des produits de toutes les commandes d'un utilisateur
-	function get_all_info_order($id_user){
+	//Permet d'obtenir le nombre total de commande validé d'un utilisateur
+	function get_id_order_paid($id_user){
 		$bdd = Database3Splus::getinstance();//connexion();
-		$req = "SELECT OD.id_product,OD.amount,OD.sauce FROM order_details OD,orders O  WHERE O.id_order=OD.id_order AND OD.id_user=:id_user AND O.paid=1";
+		$req = "SELECT id_order FROM orders WHERE id_user=id_user AND paid=1";
 		$result = $bdd->prepare($req);
 		$result->bindParam(':id_user', $id_user);
 		$result->execute();
-		$result2=$result->fetchAll();
-		if (!empty($result2)){
-			return $result2;	
-		}else{
+		$result2['info'] = $result->fetchAll();
+		$result2['count'] = count($result2["info"]);
+		if($result2['count']){
+			return $result2;
+		}
+		else{
 			return FALSE;
 		}
 	}

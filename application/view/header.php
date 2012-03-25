@@ -35,7 +35,7 @@
 									<img class="inlineBlock alignCenter verticalAlignM" alt="Star" src="<?php echo HTTP_IMG;?>/Star.png">
 								</td>
 								<td class="headInfoTd cursorPointer">
-									<a href="<?php echo HTTP_INDEX;?>?page=order&action=order"><span class="toReplace">0</span> Commande</a>
+									<a href="<?php echo HTTP_INDEX;?>?page=order&action=order"><span class="colorBlue"><?php echo $nbrOrder;?></span> Commande</a>
 								</td>
 								<td class="headInfoTd cursorPointer">
 									<a href="<?php echo HTTP_INDEX;?>?page=order&action=panier">Panier : <span class="colorBlue"><?php echo $totalPrice;?> €</span></a>

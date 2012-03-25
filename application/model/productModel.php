@@ -37,10 +37,13 @@
 		$req = "select name,price from products where id_product=:id_product";
 		$result = $bdd->prepare($req);
 		$result->bindParam(':id_product', $id_product);
-		$result->execute();
-		$result2=$result->fetchAll();
-		if (!empty($result2)){
-			return $result2[0];	
+		$count = $result->execute();
+		if($count){
+			while ($row = $result->fetch(PDO::FETCH_ASSOC)){
+				$data['name']=$row['name'];
+				$data['price']=$row['price'];
+		    }
+			return $data;
 		}else{
 			return FALSE;
 		}

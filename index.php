@@ -78,8 +78,9 @@
 	$_SESSION['uid']=1;
 	$tmp=user_get_info(1);
 	$_SESSION['user']=$tmp[0];
-	$_SESSION['orders'] = get_all_info_order($_SESSION['user']['id_user']);
 	$_SESSION['currentOrder'] = "";
+	$tmp = get_id_order_paid($_SESSION['user']['id_user']);//Nombre de commande payé d'un utilisateur
+	$nbrOrder = $tmp['count'];
 	//On récupère l'id _order non payé d'un utilisateur, sinon on en génère un nouveau
 	$test = verif_user_order($_SESSION['user']['id_user']);
 	if($test){
