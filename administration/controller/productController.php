@@ -10,6 +10,11 @@
 			include_once(CHEMIN_VIEW . '/individuel.php');
 			include_once(CHEMIN_VIEW . '/footer.php');
 			break;
+		case 'show_edit':
+			include_once(CHEMIN_VIEW . '/header.php');
+			include_once(CHEMIN_VIEW . '/editer.php');
+			include_once(CHEMIN_VIEW . '/footer.php');
+			break;
 		default:
 			break;
 	}
