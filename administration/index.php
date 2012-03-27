@@ -31,4 +31,6 @@ if(!isset($_REQUEST['page']))
 //Le client demande une page particuliere
 //On passe la main au controller de page
 include_once (CHEMIN_CONTROLLER . '/pageController.php');
+
+//Le client est authentifie ou il demande à se loguer
 ?>

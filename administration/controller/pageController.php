@@ -14,6 +14,13 @@
 		case 'login':
 			include_once (CHEMIN_CONTROLLER . '/loginController.php');
 			break;
+		case 'home':
+			header('Location: ' . HTTP_INDEX . '?page=product&action=show');
+			break;
+		case 'product':
+			include_once(CHEMIN_CONTROLLER . '/productController.php');
+			break;
+		
 		default:
 			include_once (CHEMIN_VIEW . '/header.php');
 			include_once (CHEMIN_VIEW . '/404.php');
