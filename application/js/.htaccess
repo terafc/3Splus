@@ -1,0 +1,5 @@
+#Autorisation d'access
+#---------------------
+Options -Indexes
+Allow From All
+
