@@ -14,27 +14,23 @@ session_start();
  * Partie ADMINISTRATION *
  **************/
 
-if (isset($_SESSION['login'])) {
-	include_once (CHEMIN_VIEW . '/header.php');
-}
-//Header
-//On inclut le contrôleur si $_GET['page'], et $_GET['action'] est définit, et si le controller existe
+//Si le client n'est pas authentifie
+if (!isset($_SESSION['login'])){
+	//Si il n'a pas deja ete redirige vers le login
+	if(!isset($_REQUEST['page']) || $_REQUEST['page']!='login'){
+		//On le redirige vers le login
+		header('Location: ' . HTTP_INDEX . '?page=login&action=show');
+	}
+} 
 
-if (!isset($_SESSION['login']) && empty($_REQUEST['page'])) {
-	header("Location: " . HTTP_INDEX . "?page=login&action=show");
-} else {
-	if (!empty($_REQUEST['page']) && !empty($_REQUEST['action'])) {
-		$action = $_REQUEST['action'];
-		include_once (CHEMIN_CONTROLLER . '/' . $_REQUEST['page'] . 'Controller.php');
-	}
-	//Sinon si l'utilisateur est logé on indique une erreur 404
-	elseif (isset($_SESSION['login'])) {
-		header('Location:' . HTTP_INDEX . '?page=commandes&action=show');
-	}
-	//Sinon on le redirige vers la page de login
-	else {
-		$action = "show";
-		include_once (CHEMIN_CONTROLLER . '/loginController.php');
-	}
-}
+//Le client est authentifie ou il demande à se loguer
+//Par defaut on le redirige vers l'accueil
+if(!isset($_REQUEST['page']))
+	header('Location: ' . HTTP_INDEX . '?page=home');
+
+//Le client demande une page particuliere
+//On passe la main au controller de page
+include_once (CHEMIN_CONTROLLER . '/pageController.php');
+
+//Le client est authentifie ou il demande à se loguer
 ?>

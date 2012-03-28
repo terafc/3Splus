@@ -21,8 +21,8 @@
 					<table id="menuTable">
 						<tr>
 							<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show">Comm. en groupe</a></td>
-							<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show">Comm. individuel</a></td>
-							<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show">Historique</a></td>
+							<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_indiv">Comm. individuel</a></td>
+							<td class="menuTd" onmouseover="$(this).addClass('menuTdHover');" onmouseout="$(this).removeClass('menuTdHover');"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_edit">Editer produit</a></td>
 						</tr>
 					</table>
 				</div>
@@ -30,7 +30,9 @@
 		</div>
 		</div>
 		<hr/>
+		<?php if(isset($_SESSION['login'])){ ?>
 		<form action="index.php?page=login&action=logout" method='post'>
 			<input type='submit' value='Deconnexion'>
 		</form>
+		<?php } ?>
 		<div id="main">
