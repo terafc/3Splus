@@ -330,3 +330,10 @@ hr{
 	border-width:5px;
 	margin-bottom:85px;
 }
+
+.borduressousonglets{
+	margin-left:50%;
+	border-top:2px solid black;
+	border-bottom:2px solid black;
+	border-radius:13px 0px 13px 0px;
+}

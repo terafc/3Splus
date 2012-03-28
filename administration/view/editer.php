@@ -4,7 +4,7 @@
 	?>
 	
 	<div>
-		<table>
+		<table class="borduressousonglets">
 			<tr>
 				<td class="sousonglets sousongletsimpaires" ><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_edit">Editer prod.</a></td>
 				<td class="sousonglets sousongletspaires"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_ajout_groupe">Modifier prod.</a></td>
