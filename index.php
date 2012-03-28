@@ -91,7 +91,6 @@
 	/**************
 	 * Partie WEB *
 	 **************/
-	
 	//POUR LES TEST
 	$_SESSION['uid']=1;
 	$tmp=user_get_info(1);
@@ -131,6 +130,14 @@
 			$action = $_REQUEST['action'];
 			$page = $_REQUEST['page'];
 			include_once(CHEMIN_CONTROLLER.'/'.$_REQUEST['page'].'Controller.php');
+		}
+		//Cas où l'utilisateur est redirigé par paypal après un paiement
+		elseif(isset($_GET['token']) && isset($_GET['PayerID'])){
+			header('Location: '.HTTP_INDEX.'?page=paypal&action=returnPaypal&token='.$_GET['token'].'&PayerID='.$_GET['PayerID']);
+		}
+		//Cas où l'utilisateur annule un paiement depuis paypal
+		elseif(isset($_GET['token'])){
+			header('Location: '.HTTP_INDEX.'?page=paypal&action=cancelPaypal');
 		}
 		elseif(!isset($_REQUEST['action']) && !isset($_REQUEST['page'])){//Si on affiche la page pour la première fois sans variables
 			include_once(CHEMIN_VIEW.'/accueil.php');

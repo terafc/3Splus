@@ -1,3 +1,9 @@
+<?php
+	//On vérifie si il y a un message de confirmation
+	if(isset($message)){
+		echo "<div class='alignCenter bold'>".$message."</div>";
+	}
+?>
 <div>
 	<span class="bold">
 		<span class="colorBlue">C</span>ommande Journalière (Payé)
