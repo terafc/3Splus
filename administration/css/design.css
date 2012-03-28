@@ -225,7 +225,7 @@ hr{
 }
 .groupe{
 	border-collapse: collapse;
-	float: inherit;	
+	display: inline-block;	
 }
 .cadrehead{
 	border:2px solid #404080;
@@ -246,25 +246,27 @@ hr{
 }
 
 .margecadre{
-	margin-top:50px;
+    display: inline-table;
+    margin-top: 50px;
 }
 
 .menuleft{
 	background-color:#ccdafe;
-	width:100px;
+	width:10%;
 	height:650px;
-	float:left;
-	margin-right:50px;
+	display: inline-block;
+	vertical-align:text-top;
+	vertical-align:top;
+	margin-right: 20px;
 }
 
 .textmenuleft{
-	vertical-align:text-top;
+	
 	color:#0000ff;
 	font-size:15px;
 }
 
 .titremenuleft{
-	vertical-align:text-top;
 	color:#0000ff;
 	font-size:20px;
 	line-height:50px;
@@ -272,4 +274,21 @@ hr{
 
 .col1{
 	color:#004000;
+}
+
+.tableaux{
+	display:inline-block;
+	width:87%;
+}
+
+.ketchup{
+	background-color:#ff0000;
+}
+
+.piment{
+	background-color:#580400;
+}
+
+.mayo{
+	background-color:#ffff00;
 }
