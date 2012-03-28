@@ -240,6 +240,7 @@ hr{
 .cadrepaire{
 	background-color:#99ad99;
 	border:2px solid #004000;
+	font-weight:bold;
 }
 .raw{
 	border:1px solid #004000;
@@ -314,4 +315,18 @@ hr{
 
 .sousongletspaires{
 	background-color:#f7563c;
+}
+
+.creer{
+	border-bottom:solid;
+	border-bottom-color:#c1f7aa;
+	border-top:solid;
+	border-top-color:#c1f7aa;
+	border-left:solid;
+	border-left-color:#99ad99;
+	border-right:solid;
+	border-right-color:#99ad99;
+	border-radius:10px;
+	border-width:5px;
+	margin-bottom:85px;
 }

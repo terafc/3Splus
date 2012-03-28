@@ -1,6 +1,6 @@
 <div>
 	<?php
-		$Cat=array("Sandwich chaud","Sandwich froid","Vienoiserie","Salade","Glace","Boisson");
+		$Produit=array("Pain bouchon","Miam miam","Pains chaud","1.5");
 	?>
 	
 	<div>
@@ -9,7 +9,6 @@
 				<td class="sousonglets sousongletsimpaires" ><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_edit">Editer prod.</a></td>
 				<td class="sousonglets sousongletspaires"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_ajout_groupe">Modifier prod.</a></td>
 				<td class="sousonglets sousongletsimpaires"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_ajout_categorie">Editer groupe</a></td>
-				<td class="sousonglets sousongletspaires"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_modif_produit">Modifier groupe</a></td>
 				<td class="sousonglets sousongletsimpaires"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_modif_groupe">Editer categorie</a></td>
 				<td class="sousonglets sousongletspaires"><a class="menuLink" href="<?php echo HTTP_INDEX;?>?page=product&action=show_modif_categorie">Modifier categorie</a></td>
 			</tr>
@@ -19,27 +18,27 @@
 			<form method="POST" action="">
 				<table class="creer">
 					<tr><td>
-						Veuillez entrer le nom du produit:
+						Nom du produit:
 					</td>
 					<td>
 						<br />
 						<div class="choix">
-							<input type="text" />
+							<input type="text" name="nom_produit" value="<?php echo $Produit[0]?>"/>
 							<br />
 						</div>
 					</td></tr>
 					<tr><td>
-						Veuillez entrer la description du produit:
+						Description du produit:
 					</td>
 					<td>
 						<br />
 						<div class="choix">
-							<textarea rows="10" cols="20" name="description">Description:</textarea>
+							<textarea rows="10" cols="20" name="description"><?php $Produit[1]?></textarea>
 							<br />
 						</div>
 					</td></tr>
 					<tr><td>
-						Veuillez choisir la categorie du produit:
+						Categorie du produit:
 					</td>
 					<td>
 						<br />
@@ -56,17 +55,17 @@
 					</td></tr>
 					<tr><td>
 					<tr><td>
-						Veuillez entrer le prix produit:
+						Prix produit:
 					</td>
 					<td>
 						<br />
 						<div class="choix">
-							<input type="text" />€
+							<input type="text" name="prix" value="<?php echo $Produit[3] ?>"/>€
 							<br />
 						</div>
 					</td></tr>
 					<tr><td>
-						Validez pour créer le produit:
+						Validez pour modifier le produit:
 					</td>
 					<td>
 						<br />
