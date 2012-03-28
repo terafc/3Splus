@@ -1,5 +1,4 @@
 <?php
-include_once ("../global/Database.php");
 //Renvoye la liste des groupes ayant commandés en ce JOUR !!!
 function get_group_cmd() {
 
@@ -100,9 +99,5 @@ function get_product($id_order) {
 	return $product;
 	
 }
-var_dump(get_orders());
-var_dump(get_group_cmd());
-//var_dump(get_user_cmd());
-var_dump(get_cmd_detail('1'));
 ?>
 
