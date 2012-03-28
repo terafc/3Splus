@@ -1,4 +1,6 @@
 <?php
+
+	require_once (CHEMIN_MODEL . '/mainModel.php');
 	switch($_REQUEST['action']){
 		case 'show':
 			include_once(CHEMIN_VIEW . '/header.php');

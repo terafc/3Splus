@@ -7,8 +7,11 @@
 		$result = $bdd->prepare($req);
 		$result->execute();
 		$count = $result->rowCount();//on compte nombre de groups retourné
-		$result2 = $count.''.$result;//on ajoute le nombre total à la liste
+		var_dump($count);
+		exit;	
+//$result2 = $count.''.$result;//on ajoute le nombre total à la liste
 		$groups = $result2->fetchAll();//On organise le tout...
+		$groups['count'] = $count;
 		if(!empty($groups)){
 			return $groups;
 		}
