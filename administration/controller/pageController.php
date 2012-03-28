@@ -9,16 +9,21 @@
 	//******************************
 	//Prereq: $_REQUEST['page']
 	//******************************
-
 	switch($_REQUEST['page']){
 		case 'login':
 			include_once (CHEMIN_CONTROLLER . '/loginController.php');
 			break;
 		case 'home':
-			header('Location: ' . HTTP_INDEX . '?page=product&action=show');
+			header('Location: ' . HTTP_INDEX . '?page=order&action=show');
 			break;
-		case 'product':
-			include_once(CHEMIN_CONTROLLER . '/productController.php');
+		case 'order':
+			include_once (CHEMIN_CONTROLLER . '/orderController.php');
+			break;
+		case 'indivorder':
+			include_once (CHEMIN_CONTROLLER . '/indivorderController.php');
+			break;
+		case 'edit':
+			include_once (CHEMIN_CONTROLLER . '/editController.php');
 			break;
 		
 		default:
