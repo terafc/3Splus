@@ -43,7 +43,7 @@
 		Et
 		<br/>
 		<div class="inlineBlock confirmPanier">
-			<form method="POST" action="<?php echo HTTP_INDEX."?page=order&action=confirm";?>">
+			<form method="POST" action="<?php echo HTTP_INDEX."?page=paypal&action=paypal";?>">
 				<input type="submit" value="Payer"/>
 			</form>
 		</div>

@@ -61,7 +61,8 @@
 			}else{$error = "Le produit demandé n'existe pas !";}
 			$message = isset($error) ? $error : "Produit ajouté au Panier !";
 			echo $message;
-			header('Location: '.HTTP_INDEX.'?page='.$page.'&action=show&what='.$what.'&message='.$message);  
+			header('Location: '.HTTP_INDEX.'?page='.$page.'&action=show&what='.$what.'&message='.$message); 
+			exit(); 
 			break;
 		default:
 			include_once(CHEMIN_VIEW."/404.php");

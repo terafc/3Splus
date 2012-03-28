@@ -43,6 +43,9 @@
 					}
 				}
 			}
+			if(isset($_REQUEST['message']) && $_REQUEST['message'] = "confirm"){//On vérifie si il y a un message (lorsqu'un paiement est confirmé)
+				$message = "<h1>Paiement effectué ! Merci d'avoir utiliser 3S+ !</h1>";
+			}//On vérifie si il y a un message (lorsqu'un paiement est confirmé)
 			include_once(CHEMIN_VIEW."/order.php");
 			break;
 		case "editAmount":
@@ -60,11 +63,13 @@
 				}
 			}
 			header('Location: '.HTTP_INDEX.'?page='.$page.'&action=panier');
+			exit();
 			break;
 		case "delete":
 			require_once(CHEMIN_MODEL."/ordersModel.php");
 			del_product_of_order($_SESSION['id_order'], $_REQUEST['id_product'],$_REQUEST['sauce']);//Permet de supprimer un produit
 			header('Location: '.HTTP_INDEX.'?page=order&action=panier'); 
+			exit();
 			break;
 		case "confirm":
 			require_once(CHEMIN_MODEL."/ordersModel.php");
@@ -72,6 +77,7 @@
 			//Faire cas panier vide
 			confirm_order($_SESSION['id_order']);
 			header('Location: '.HTTP_INDEX.'?page=order&action=order'); 
+			exit();
 			break;
 		default:
 			include_once(CHEMIN_VIEW."/404.php");

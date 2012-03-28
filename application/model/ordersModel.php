@@ -107,6 +107,8 @@
 		$result = $bdd->prepare($req);
 		$result->bindParam(':id_order', $id_order);
 		$result->execute();
+		$count = $result->rowCount();
+		return $count;
 	}
 
 	//Permet de récupéré la liste des produits d'une commande
