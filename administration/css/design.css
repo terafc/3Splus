@@ -240,6 +240,7 @@ hr{
 .cadrepaire{
 	background-color:#99ad99;
 	border:2px solid #004000;
+	font-weight:bold;
 }
 .raw{
 	border:1px solid #004000;
@@ -295,4 +296,44 @@ hr{
 
 .tableauindiv{
 	display:inline-block;
+}
+
+.choix{
+	text-align:right;
+	float:right;
+	margin-left:500px;
+}
+
+.sousonglets{
+	font-size:15px;
+	border-radius:13px 0px 13px 0px;
+}
+
+.sousongletsimpaires{
+	background-color:#3374d5;
+}
+
+.sousongletspaires{
+	background-color:#f7563c;
+}
+
+.creer{
+	border-bottom:solid;
+	border-bottom-color:#c1f7aa;
+	border-top:solid;
+	border-top-color:#c1f7aa;
+	border-left:solid;
+	border-left-color:#99ad99;
+	border-right:solid;
+	border-right-color:#99ad99;
+	border-radius:10px;
+	border-width:5px;
+	margin-bottom:85px;
+}
+
+.borduressousonglets{
+	margin-left:50%;
+	border-top:2px solid black;
+	border-bottom:2px solid black;
+	border-radius:13px 0px 13px 0px;
 }
