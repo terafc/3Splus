@@ -1,7 +1,7 @@
 <?php
 define('SQL_DSN', 'mysql:dbname=3splus;host=localhost');
 define('SQL_USERNAME', 'root');
-define('SQL_PASSWORD', 'root');
+define('SQL_PASSWORD', '');
 
 class Database3Splus extends PDO {
 	private static $_instance;
