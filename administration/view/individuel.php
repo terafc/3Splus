@@ -54,7 +54,7 @@
 					echo " <td class='raw piment'></td>";
 				}else{
 					echo " <td class='raw'></td>";
-				}//*/
+				}
 				echo " <td class='raw'><b>" . $value[2] . "</b></td>";
 				echo " <td class='raw'><b>" . $value[4] . " " . $value[3] . "</b></td>";
 				echo " <td class='raw'>" . $value[5] . "</td>";

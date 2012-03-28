@@ -296,3 +296,22 @@ hr{
 .tableauindiv{
 	display:inline-block;
 }
+
+.choix{
+	text-align:right;
+	float:right;
+	margin-left:500px;
+}
+
+.sousonglets{
+	font-size:15px;
+	border-radius:13px 0px 13px 0px;
+}
+
+.sousongletsimpaires{
+	background-color:#3374d5;
+}
+
+.sousongletspaires{
+	background-color:#f7563c;
+}
