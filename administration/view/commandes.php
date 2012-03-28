@@ -15,7 +15,8 @@
 		<b>Porteur: <span class="colorBlue"><?php echo $groupe['nom_porteur']; ?></span></b>
 		<b>N° d'etudiant: <?php echo $groupe['num_porteur']; ?></b>
 		
-		<form methode=POST, action='<?php echo get_url_validate_by_gid($groupe['num_cmd']); ?>'>
+		<form methode=POST, action='<?php echo $validate_url ?>'>
+			<input type='hidden' name='id_grp_cmd' value='<?php echo $groupe['num_cmd']; ?>'>
 			<input type='submit' name='cmdvalider' value='Valider la commande' class="floatRight">
 		</form>
 		<table class='groupe'>

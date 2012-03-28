@@ -9,10 +9,6 @@
 			$CMD[1]=array("Americain Poulet","M", "Coca 50cl","NANDJAN", "Clement","3000302");
 			$CMD[2]=array("Americain Jambon","P", "Edena 1l","RETHORE","Sof", "3100325");
 			$CMD[3]=array("Americain nature","KP", "Sprite 50cl", "MARCOZ", "Francel", "3000254");
-			$Numcmd="026256";
-			$NomGroupe="Roti Porc";
-			$Porteur="DIJOUX Marc";
-			$NumetdPorteur="3100263";
 		
 			$cmds[0]['commandes'] = $CMD;
 			$cmds[0]['num_cmd'] = "026256";
