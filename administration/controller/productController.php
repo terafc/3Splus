@@ -4,7 +4,6 @@
 	switch($_REQUEST['action']){
 		case 'show':
 			include_once(CHEMIN_VIEW . '/header.php');
-			var_dump(get_group_cmd());
 			include_once(CHEMIN_VIEW . '/commandes.php');
 			include_once(CHEMIN_VIEW . '/footer.php');
 			break;

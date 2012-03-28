@@ -26,19 +26,15 @@
 		<b class="titremenuleft"><u>
 			Groupes</u></b>
 		<br />
-		<u><?php echo $NomGroupe
-			?></u>
+		<u><?php echo $NomGroupe; ?></u>
 	</div>
 </div>
 <div class="tableaux">	
-<?php foreach ($cmds as $groupe){
-?>
+<?php foreach ($cmds as $groupe){ ?>
 	<div class="margecadre">
-		<b>Groupe: <span class="colorPink"><?php echo $groupe['nom_grp']
-			?></span> </b>
-		<b>Porteur: <span class="colorBlue"><?php echo $groupe['nom_porteur']
-			?></span> </b>
-		<b>N° d'etudiant: <?php echo $groupe['num_porteur']?></b>
+		<b>Groupe: <span class="colorPink"><?php echo $groupe['nom_grp']; ?></span></b>
+		<b>Porteur: <span class="colorBlue"><?php echo $groupe['nom_porteur']; ?></span></b>
+		<b>N° d'etudiant: <?php echo $groupe['num_porteur']; ?></b>
 		<table class='groupe'>
 			<tr>
 				<th class='cadrehead'>Sandwichs</th>
@@ -60,33 +56,30 @@
 					$parite = "cadreimpaire";
 				}
 	
-				echo "
-			<tr class=" . $parite . ">
-				";
-				echo " <td class='raw col1'><b>" . $value[0] . "</b></td>";
-				if(strcspn('K',$value[1])==0){
-					echo " <td class='raw ketchup'></td>";
-				}else{
-					echo " <td class='raw'></td>";
-				}
-				if(strcspn('M',$value[1])==0){
-					echo " <td class='raw mayo'></td>";
-				}else{
-					echo " <td class='raw'></td>";
-				}
-				if(strcspn('P',$value[1])==0){
-					echo " <td class='raw piment'></td>";
-				}else{
-					echo " <td class='raw'></td>";
-				}//*/
-				echo " <td class='raw'><b>" . $value[2] . "</b></td>";
-				echo " <td class='raw'><b>" . $value[4] . " " . $value[3] . "</b></td>";
-				echo " <td class='raw'>" . $value[5] . "</td>";
-				echo " <td class='raw'>" . $groupe['num_cmd']. "-" . $value[5];
-				echo "
+			?>
+			<tr class=<?php echo $parite; ?> >
+				<td class='raw col1'><b> <?php echo $value[0]; ?></b></td>
+				<?php if(strcspn('K',$value[1])==0){ ?>
+					<td class='raw ketchup'></td>
+				<?php }else{ ?>
+					<td class='raw'></td>
+				<?php } 
+				if(strcspn('M',$value[1])==0){ ?>
+					<td class='raw mayo'></td>
+				<?php }else{ ?>
+					<td class='raw'></td>
+				<?php }
+				if(strcspn('P',$value[1])==0){ ?>
+					<td class='raw piment'></td>
+				<?php }else{ ?>
+					<td class='raw'></td>
+				<?php } ?>
+				<td class='raw'><b> <?php echo $value[2]; ?></b></td>
+			        <td class='raw'><b> <?php echo $value[4]." ".$value[3]; ?></b></td>
+				<td class='raw'> <?php echo $value[5]; ?> </td>
+				<td class='raw'> <?php echo $groupe['num_cmd']. "-" . $value[5]; ?>
 			</tr>
-			";
-				$i++;
+			<?php $i++; 
 			}
 			?>
 			<form methode=POST, action='<?php echo get_url_validate_by_gid($groupe['num_cmd']) ?>'>
