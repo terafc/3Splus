@@ -11,12 +11,15 @@
 	$NumetdPorteur="3100263";
 	
 	$cmds[0]['commandes'] = $CMD;
+	$cmds[0]['num_cmd'] = $Numcmd;
 	$cmds[0]['nom_grp'] = $NomGroupe;
 	$cmds[0]['nom_porteur'] = $Porteur;
 	$cmds[0]['num_porteur'] = $NumetdPorteur;
 	
 	$cmds[1]=$cmds[0];
-	
+	function get_url_validate_by_gid($Gid){
+		return HTTP_INDEX.'?page=product&action=validate&id='.$Gid;
+	}
 ?>
 <div class="menuleft">
 	<div class="textmenuleft">
@@ -79,14 +82,14 @@
 				echo " <td class='raw'><b>" . $value[2] . "</b></td>";
 				echo " <td class='raw'><b>" . $value[4] . " " . $value[3] . "</b></td>";
 				echo " <td class='raw'>" . $value[5] . "</td>";
-				echo " <td class='raw'>" . $Numcmd . "-" . $value[5];
+				echo " <td class='raw'>" . $groupe['num_cmd']. "-" . $value[5];
 				echo "
 			</tr>
 			";
 				$i++;
 			}
 			?>
-			<form methode=POST, action=''>
+			<form methode=POST, action='<?php echo get_url_validate_by_gid($groupe['num_cmd']) ?>'>
 				<input type='submit' name='cmdvalider' value='Valider la commande' class="floatRight">
 			</form>
 

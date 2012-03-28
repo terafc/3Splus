@@ -292,3 +292,7 @@ hr{
 .mayo{
 	background-color:#ffff00;
 }
+
+.tableauindiv{
+	display:inline-block;
+}
