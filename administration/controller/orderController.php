@@ -3,8 +3,6 @@
 	require_once (CHEMIN_MODEL . '/mainModel.php');
 	switch($_REQUEST['action']){
 		case 'show':
-
-	
 			$CMD[0]=array("Bouchon Gratine","K", "Fanta 50cl","DIJOUX", "Marc","3100263");
 			$CMD[1]=array("Americain Poulet","M", "Coca 50cl","NANDJAN", "Clement","3000302");
 			$CMD[2]=array("Americain Jambon","P", "Edena 1l","RETHORE","Sof", "3100325");
@@ -18,31 +16,18 @@
 	
 			$cmds[1]=$cmds[0];
 
-			function get_url_validate_by_gid($Gid){
-				return HTTP_INDEX.'?page=product&action=validate&id='.$Gid;
-			}
+			$validate_url = HTTP_INDEX.'?page=order&action=validate';
 
 			include_once(CHEMIN_VIEW . '/header.php');
 			include_once(CHEMIN_VIEW . '/commandes.php');
 			include_once(CHEMIN_VIEW . '/footer.php');
 			break;
-		case 'show_indiv':
-			include_once(CHEMIN_VIEW . '/header.php');
-			include_once(CHEMIN_VIEW . '/individuel.php');
-			include_once(CHEMIN_VIEW . '/footer.php');
-			break;
-		case 'show_edit':
-			include_once(CHEMIN_VIEW . '/header.php');
-			include_once(CHEMIN_VIEW . '/editer.php');
-			include_once(CHEMIN_VIEW . '/footer.php');
-			break;
-
 		case 'validate':
-			
-			include_once(CHEMIN_VIEW . '/header.php');
-			echo $_REQUEST['id'];
-			include_once(CHEMIN_VIEW . '/footer.php');
+			break;
 		default:
+			include_once (CHEMIN_VIEW . '/header.php');
+			include_once (CHEMIN_VIEW . '/404.php');
+			include_once (CHEMIN_VIEW . '/footer.php');
 			break;
 	}
 ?>
