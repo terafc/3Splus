@@ -121,8 +121,7 @@
 			}
 			
 			curl_close($ch);// On ferme notre session cURL.
-			
-			include_once(CHEMIN_VIEW."/messRedirection.php");//Pour affiche rle message d'erreur
+			include_once(CHEMIN_VIEW."/messRedirection.php");//Pour afficher le message d'erreur
 			break;
 		default:
 			include_once(CHEMIN_VIEW."/404.php");

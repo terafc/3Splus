@@ -72,7 +72,7 @@ function get_cmd() {
 	$bdd = Database3Splus::getinstance();
 	//date_default_timezone_set('Indian/Reunion');
 	$date = date('Y-m-d');
-	$req = "select * from orders where date='" . $date . "'";
+	$req = "SELECT * FROM orders WHERE validated=0 and date='" . $date . "'";
 	foreach ($bdd->query($req) as $key => $value) {
 		$order[$key] = $value;
 	}
@@ -123,6 +123,14 @@ function get_categorie($id_product) {
 	$cat_tmp = $cat_tmp -> fetch();
 	$category = $cat_tmp['name'];
 	return $category;
+}
+
+//Valide une commande individuelle
+//Retourne le nombre de lignes affectés
+function validate_indiv_cmd($id_cmd){
+	$bdd = Database3Splus::getInstance();
+	$req = "UPDATE orders SET validated = 1 WHERE id_order = '".$id_cmd."'";
+	return $bdd->exec($req);
 }
 ?>
 

@@ -5,10 +5,6 @@
 	$CMD[2]=array("Americain Jambon","P", "Edena 1l","RETHORE","Sof", "3100325","123458");
 	$CMD[3]=array("Americain nature","KP", "Sprite 50cl", "MARCOZ", "Francel", "3000254","123459");
 	$CMD[4]=array("Crudite Jambon","KM", "Sambo 33cl", "RIVIERE", "Serge", "3000255","123460");
-	
-	function get_url_validate_by_gid($Gid){
-		return HTTP_INDEX.'?page=product&action=validate&id='.$Iid;//Iid=Id individuel
-	}
 ?>
 
 <div class="tableauindiv">
@@ -61,7 +57,8 @@
 				echo " <td class='raw'>". $value[6];
 				?>
 				<td>
-					<form methode=POST, action='<?php echo get_url_validate_by_gid($groupe['num_cmd']) ?>'>
+					<form method='POST' action='<?php echo $validate_url ?>'>
+						<input type='hidden' name='indiv_cmd' value=<?php echo $value[6]; ?>>
 						<input type='submit' name='cmdvalider' value='Valider la commande' class="floatRight">
 					</form>
 				</td>
