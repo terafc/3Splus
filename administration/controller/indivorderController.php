@@ -4,7 +4,8 @@
 	switch($_REQUEST['action']){
 		case 'show':
 
-			var_dump (get_orders());
+			$CMD = array();
+
 			$CMD[0]=array("Bouchon Gratine","K", "Fanta 50cl","DIJOUX", "Marc","3100263","123456");
 			$CMD[1]=array("Americain Poulet","M", "Coca 50cl","NANDJAN", "Clement","3000302","123457");
 			$CMD[2]=array("Americain Jambon","P", "Edena 1l","RETHORE","Sof", "3100325","123458");
@@ -17,8 +18,6 @@
 			include_once(CHEMIN_VIEW . '/footer.php');
 			break;
 		case 'validate':
-			//validate_indiv_cmd();
-			header("Location: ".HTTP_INDEX.'page=indivorder&action=show');
 			break;
 		default:
 			include_once (CHEMIN_VIEW . '/header.php');
