@@ -30,6 +30,7 @@
 		//Cas où l'utilisateur clique pour payer la commande.
 		//On effectue la première requête curl pour demander un paiement à Paypal
 		case 'paypal':
+			confirm_order($_SESSION['id_order']);
 			$requete = construit_url_paypal();//Début dé la construction de la requête paypal
 			//On défini les différents paramètres de la requête.
 			$requete = $requete."&METHOD=SetExpressCheckout".
