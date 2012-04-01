@@ -125,7 +125,7 @@
 			$_SESSION['id_order'] = create_id_order($_SESSION['user']['id_user']);
 			$totalPrice = 0;
 		}
-		
+
 		//if($auth){//Si l'utilisateur est authentifié
 			include_once(CHEMIN_VIEW.'/header.php');//Header
 			//On inclut le contrôleur si $_GET['page'], et $_GET['action'] est définit, et si le controller existe
