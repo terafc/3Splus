@@ -37,6 +37,10 @@ hr {
 	height: 140px;
 	padding: 10px;
 }
+#header2 {
+	height: 105px;
+	padding: 10px;
+}
 #main {
 	padding: 10px;
 }
@@ -127,6 +131,9 @@ hr {
 }
 .italic {
 	font-style: italic;
+}
+.underline {
+	text-decoration: underline;
 }
 .verticalAlignT {
 	vertical-align: top;

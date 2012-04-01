@@ -14,49 +14,52 @@
 	require_once(CHEMIN_MODEL."/productModel.php");
 	//Permet de définir l'heure du serveur avec les fuseaux horaire de la réunion
 	date_default_timezone_set('Indian/Reunion');
-	/*$currentDateTime = date("H:i");
+	/*
+	// On charge la config et les librairies FB
+	require_once(CHEMIN_CONFIG.'/config.php');
+	require_once(CHEMIN_LIB.'/facebook.php');
+	*/
+	/*******************
+	 * Partie FACEBOOK *
+	 *******************/
+	/*
+	header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"'); // Hack IE pour passer les params des POST...
+	
+	// On initialise le SDK Facebook PHP
+	$fb = new Facebook(array(
+	       'appId'  => FB_APP_ID,
+	       'secret' => FB_SECRET_ID,
+	       'cookie' => true,
+		));
+	
+	$user = null; //Initialisation de l'utilisateur
+	
+	//On vérifie que l'utilisateur a accepter les autorisations FB
+	try {
+		// On récupère l'UID de l'utilisateur Facebook courant
+		$uid = $fb->getUser();
+		// On récupère les infos de base de l'utilisateur
+		$user = $fb->api('/me');
+	}
+	// S'il y'a un problème lors de la récup, perte de session entre temps, suppression des autorisations...
+	catch (FacebookApiException $e) {
+		// On récupère l'URL sur laquelle on devra rediriger l'utilisateur pour le réidentifier sur l'application
+		$params = array(
+			'redirect_uri' => HTTP_INDEX
+		);
+		$loginUrl = $fb->getLoginUrl($params);
+		// On le redirige en JS (header PHP pas possible)
+		echo "<script type='text/javascript'>top.location.href = '".$loginUrl."';</script>";
+ 		exit();
+	}*/
+	/*$uid=1;//A enlever. Uniquement pour les test en local
+	$currentDateTime = date("H:i");
 	if($currentDateTime>"10:00" && $currentDateTime<"16:00"){
-		echo "Site fermé pour maintenance...";
+	 	$action = "show";
+		include_once(CHEMIN_CONTROLLER."/closeController.php");
+		exit();
 	}else{*/
-		/*
-		// On charge la config et les librairies FB
-		require_once(CHEMIN_CONFIG.'/config.php');
-		require_once(CHEMIN_LIB.'/facebook.php');
-		*/
-		/*******************
-		 * Partie FACEBOOK *
-		 *******************/
-		/*
-		header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"'); // Hack IE pour passer les params des POST...
-		
-		// On initialise le SDK Facebook PHP
-		$fb = new Facebook(array(
-		       'appId'  => FB_APP_ID,
-		       'secret' => FB_SECRET_ID,
-		       'cookie' => true,
-			));
-		
-		$user = null; //Initialisation de l'utilisateur
-		
-		//On vérifie que l'utilisateur a accepter les autorisations FB
-		try {
-			// On récupère l'UID de l'utilisateur Facebook courant
-			$uid = $fb->getUser();
-			// On récupère les infos de base de l'utilisateur
-			$user = $fb->api('/me');
-		}
-		// S'il y'a un problème lors de la récup, perte de session entre temps, suppression des autorisations...
-		catch (FacebookApiException $e) {
-			// On récupère l'URL sur laquelle on devra rediriger l'utilisateur pour le réidentifier sur l'application
-			$params = array(
-				'redirect_uri' => HTTP_INDEX
-			);
-			$loginUrl = $fb->getLoginUrl($params);
-			// On le redirige en JS (header PHP pas possible)
-			echo "<script type='text/javascript'>top.location.href = '".$loginUrl."';</script>";
-	 		exit();
-		}
-		*/
+	
 		/**************
 		 * Partie WEB *
 		 **************/
@@ -94,6 +97,7 @@
 				$totalPrice = 0;
 			}
 		}*/
+		
 		/**************
 		 * Partie WEB *
 		 **************/
@@ -125,7 +129,12 @@
 			$_SESSION['id_order'] = create_id_order($_SESSION['user']['id_user']);
 			$totalPrice = 0;
 		}
-
+		//On banni l'utilisateur si il a dépassé la limite de point autorisé (fixé à -5)
+		if($_SESSION['user']['point']<-5){
+			$action = "banned";
+			include_once(CHEMIN_CONTROLLER."/closeController.php");
+			exit();
+		}
 		//if($auth){//Si l'utilisateur est authentifié
 			include_once(CHEMIN_VIEW.'/header.php');//Header
 			//On inclut le contrôleur si $_GET['page'], et $_GET['action'] est définit, et si le controller existe

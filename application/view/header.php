@@ -7,7 +7,6 @@
 		<link rel="shortcut icon" href="<?php echo HTTP_IMG;?>/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS;?>/design.css"/>
 		<script src="<?php echo HTTP_JS;?>/jquery-1.7.1.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="<?php echo HTTP_JS;?>/function.js"></script>
 	</head>
 	<body>
 	    <div id ="header">
@@ -22,11 +21,11 @@
 				</div>
 				<div id="headRight">
 					<div id="infoCarrier">
-						<span class="bold">N° de la commande : </span><span class="toReplace">ID</span>
+						<span class="bold">Nom : </span><span><?php echo $_SESSION['user']['lastname'];?></span>
 						<br/>
-						<span class="bold">Porteur : </span><span class="toReplace">NOM_PRENOM_ID</span>
+						<span class="bold">Prénom : </span><span><?php echo $_SESSION['user']['firstname'];?></span>
 						<br/>
-						<span class="bold">Groupe : </span><span class="toReplace">NOM</span>								
+						<span class="bold">Groupe : </span><span><?php echo $_SESSION['user']['name'];?></span>								
 					</div>
 					<div id="infoShop">
 						<table id="headInfoTable">
