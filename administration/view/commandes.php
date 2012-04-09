@@ -3,70 +3,91 @@
 		<b class="titremenuleft"><u>
 			Groupes</u></b>
 		<br />
-		<?php foreach ($cmds as $groupe){ ?>
-		<u><?php echo $groupe['nom_grp']; ?></u>
+		<?php foreach ($groups as $name => $group){ ?>
+		<u><?php echo $name; ?></u>
 		<?php } ?>
 	</div>
 </div>
 <div class="tableaux">	
-<?php foreach ($cmds as $groupe){ ?>
+<?php foreach ($groups as $name => $group){ ?>
 	<div class="margecadre">
-		<b>Groupe: <span class="colorPink"><?php echo $groupe['nom_grp']; ?></span></b>
-		<b>Porteur: <span class="colorBlue"><?php echo $groupe['nom_porteur']; ?></span></b>
-		<b>N° d'etudiant: <?php echo $groupe['num_porteur']; ?></b>
+		<b>Groupe: <span class="colorPink"><?php echo $name; ?></span></b>
+		<b>Porteur: <span class="colorBlue"><?php echo 'not implemented'; ?></span></b>
+		<b>N° d'etudiant: <?php echo 'not implemented'; ?></b>
 		
 		<form method="POST", action='<?php echo $validate_url ?>'>
-			<input type='hidden' name='id_grp_cmd' value='<?php echo $groupe['num_cmd']; ?>'>
+			<input type='hidden' name='id_grp_cmd' value='<?php echo 'not implemented'; ?>'>
 			<input type='submit' name='cmdvalider' value='Valider la commande' class="floatRight">
 		</form>
 		<table class='groupe'>
 			<tr>
+				<th class='cadrehead'>Membres</th>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<th>Nom</th>
+							<th>Prenom</th>
+							<th>Id</th>
+						</tr>
+					<?php foreach($group['users'] as $id_user => $user){?>
+						<tr>
+							<td><?php echo $user['nom'];?></td>
+							<td><?php echo $user['prenoms'];?></td>
+							<td><?php echo $id_user;?></td>
+						</tr>
+					<?php } ?>
+					</table>
+				</td>
+			<tr>
 				<th class='cadrehead'>Sandwichs</th>
-				<th class='cadrehead'>K</th>
-				<th class='cadrehead'>M</th>
-				<th class='cadrehead'>P</th>
-				<th class='cadrehead'>Boisson</th>
-				<th class='cadrehead'>Nom et Prenom</th>
-				<th class='cadrehead'>N°etd</th>
-				<th class='cadrehead'>N° Comm.</th>
 			</tr>
-			<?php
-			$i = 0;
-			foreach ($groupe['commandes'] as $value) {
-				if ($i % 2 == 0) {
-					$parite = "cadrepaire";
-				}
-				else {
-					$parite = "cadreimpaire";
-				}
-	
-			?>
-			<tr class=<?php echo $parite; ?> >
-				<td class='raw col1'><b> <?php echo $value[0]; ?></b></td>
-				<?php if(strcspn('K',$value[1])==0){ ?>
-					<td class='raw ketchup'></td>
-				<?php }else{ ?>
-					<td class='raw'></td>
-				<?php } 
-				if(strcspn('M',$value[1])==0){ ?>
-					<td class='raw mayo'></td>
-				<?php }else{ ?>
-					<td class='raw'></td>
-				<?php }
-				if(strcspn('P',$value[1])==0){ ?>
-					<td class='raw piment'></td>
-				<?php }else{ ?>
-					<td class='raw'></td>
-				<?php } ?>
-				<td class='raw'><b> <?php echo $value[2]; ?></b></td>
-			        <td class='raw'><b> <?php echo $value[4]." ".$value[3]; ?></b></td>
-				<td class='raw'> <?php echo $value[5]; ?> </td>
-				<td class='raw'> <?php echo $groupe['num_cmd']. "-" . $value[5]; ?>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<th>Nom</th>
+							<th>Sauce</th>
+							<th>Quantite</th>
+						</tr>
+					<?php foreach($group['product'] as $product){
+						if(!(strpos($product['category'],'sandwich')===false)){
+					?>
+						<tr>
+							<td><?php echo $product['name'];?></td>
+							<td><?php echo $product['sauce'];?></td>
+							<td><?php echo $product['amount'];?></td>
+						</tr>
+					<?php } 
+					}
+					?>
+					</table>
+				</td>
+			<tr>
+			<tr>
+				<th class='cadrehead'>Autres</th>
 			</tr>
-			<?php $i++; 
-			}
-			?>
-
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<th>Nom</th>
+							<th>Quantite</th>
+						</tr>
+					<?php foreach($group['product'] as $product){
+						if(strpos($product['category'],'sandwich')===false){
+					?>
+						<tr>
+							<td><?php echo $product['name'];?></td>
+							<td><?php echo $product['amount'];?></td>
+						</tr>
+					<?php } 
+					}
+					?>
+					</table>
+				</td>
+			<tr>
 		</table>
 	</div>
 <?php }?>
