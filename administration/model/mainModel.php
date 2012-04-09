@@ -78,10 +78,10 @@ function get_users_cmd() {
 				WHERE products.id_product=order_details.id_product and products.id_category=category.id_category and order_details.id_order=".$value['id_order'];
 				$i=0;
 		foreach ($bdd->query($req_cmd) as $product => $info) {
-			$result[$value['id_user']][$value['id_order']][$i]['nom']=$info['name'];
-			$result[$value['id_user']][$value['id_order']][$i]['categorie']=$info['categorie'];
-			$result[$value['id_user']][$value['id_order']][$i]['qtt']=$info['qtt'];
-			$result[$value['id_user']][$value['id_order']][$i]['sauce']=$info['sauce'];
+			$result[$value['id_user']]['orders'][$value['id_order']][$i]['nom']=$info['name'];
+			$result[$value['id_user']]['orders'][$value['id_order']][$i]['categorie']=$info['categorie'];
+			$result[$value['id_user']]['orders'][$value['id_order']][$i]['qtt']=$info['qtt'];
+			$result[$value['id_user']]['orders'][$value['id_order']][$i]['sauce']=$info['sauce'];
 			$i++;
 		}
 	}
