@@ -11,11 +11,23 @@
 			include_once(CHEMIN_VIEW . '/footer.php');
 			break;
 		case 'detail':
-			include_once(CHEMIN_VIEW . '/header.php');
-			include_once(CHEMIN_VIEW . '/individuel.php');
-			include_once(CHEMIN_VIEW . '/footer.php');
+			if(isset($_REQUEST['id_order'])){
+				$id_order = $_REQUEST['id_order'];
+				$products = get_cmd($id_order);
+				$validate_url = HTTP_INDEX.'?page=indivorder&action=validate';
+				include_once(CHEMIN_VIEW . '/header.php');
+				include_once(CHEMIN_VIEW . '/details.php');
+				include_once(CHEMIN_VIEW . '/footer.php');
+			}
+			else{
+				header('Location: ' . HTTP_INDEX . '?page=indivorder&action=show');
+			}
 			break;
 		case 'validate':
+			if(isset($_REQUEST['id_order'])){
+				validate($id_order);
+			}
+			header('Location: ' . HTTP_INDEX . '?page=indivorder&action=show');
 			break;
 		default:
 			include_once (CHEMIN_VIEW . '/header.php');
