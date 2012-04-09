@@ -1,8 +1,8 @@
 <?php
-// include_once ('../global/config.inc.php');
-// include_once ('../global/Database.php');
+ //include_once ('../global/config.inc.php');
+ //include_once ('../global/Database.php');
 
-// Renvoie un tableau contenant le nom des groupes qui ont commandés et les produits associé
+// Renvoie un tableau contenant le nom des groupes qui ont commandés,les produits associé et le porteur
 function get_groups() {
 	$bdd = Database3Splus::getInstance();
 	$req_group = "SELECT DISTINCT groups.id_group,groups.name,orders.id_order,users.id_user,users.lastname as nom, users.firstname as prenoms,users.email,orders.paid as etat 
@@ -16,6 +16,18 @@ function get_groups() {
 		$groups[$value['name']]['users'][$value['id_user']]['nom'] = $value['nom'];
 		$groups[$value['name']]['users'][$value['id_user']]['prenoms'] = $value['prenoms'];
 		$groups[$value['name']]['product'] = get_cmd_groups($groups[$value['name']]['id_group']);
+	}
+	//Pour determiner le porteur (en se basant sur les id_order contenue dans le précédent tableau groups 
+	foreach ($groups as $key => $value) {
+		$req_carrier="select id_user from carrier where id_order in
+						(select id_order from orders where id_user in
+						(select id_user from users,groups where users.id_group=groups.id_group and groups.id_group=".$value['id_group'].") and paid=1)";
+						var_dump($key);
+		foreach ($bdd->query($req_carrier) as $carrier => $id) {
+			$groups[$key]['carrier']['id_user']=$id['id_user'];
+			$groups[$key]['carrier']['nom']=$groups[$key]['users'][$id['id_user']]['nom'];
+			$groups[$key]['carrier']['prenoms']=$groups[$key]['users'][$id['id_user']]['prenoms'];
+		}
 	}
 	return $groups;
 }
@@ -80,5 +92,5 @@ function get_users_cmd() {
 // echo "</pre>";
 /*echo "<pre>";
 print_r(get_groups());
-echo "</pre>"*/
+echo "</pre>";*/
 ?>

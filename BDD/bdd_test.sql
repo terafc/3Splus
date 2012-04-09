@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le : Lun 09 Avril 2012 à 07:07
+-- Généré le : Lun 09 Avril 2012 à 07:56
 -- Version du serveur: 5.5.16
 -- Version de PHP: 5.3.8
 
@@ -51,7 +51,17 @@ CREATE TABLE IF NOT EXISTS `carrier` (
   `id_user` varchar(255) NOT NULL,
   `id_order` int(11) NOT NULL,
   PRIMARY KEY (`id_carrier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `carrier`
+--
+
+INSERT INTO `carrier` (`id_carrier`, `id_user`, `id_order`) VALUES
+(1, '2', 24),
+(2, '3', 26),
+(3, '2', 22),
+(4, '3', 27);
 
 -- --------------------------------------------------------
 
