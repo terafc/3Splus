@@ -1,7 +1,8 @@
 <div class="menuleft">
 	<div class="textmenuleft">
-		<b class="titremenuleft"><u>
-			Groupes</u></b>
+		<b class="titremenuleft">
+			<u>Groupes</u>
+		</b>
 		<br />
 		<?php foreach ($groups as $name => $group){ ?>
 		<u><?php echo $name; ?></u>
@@ -12,11 +13,11 @@
 <?php foreach ($groups as $name => $group){ ?>
 	<div class="margecadre">
 		<b>Groupe: <span class="colorPink"><?php echo $name; ?></span></b>
-		<b>Porteur: <span class="colorBlue"><?php echo 'not implemented'; ?></span></b>
-		<b>N° d'etudiant: <?php echo 'not implemented'; ?></b>
+		<b>Porteur: <span class="colorBlue"><?php echo $group['carrier']['nom'].' '.$group['carrier']['prenoms']; ?></span></b>
+		<b>N° d'etudiant: <?php echo $group['carrier']['id_user']; ?></b>
 		
 		<form method="POST", action='<?php echo $validate_url ?>'>
-			<input type='hidden' name='id_grp_cmd' value='<?php echo 'not implemented'; ?>'>
+			<input type='hidden' name='id_grp_cmd' value='<?php echo $group['id_group']; ?>'>
 			<input type='submit' name='cmdvalider' value='Valider la commande' class="floatRight">
 		</form>
 		<table class='groupe'>

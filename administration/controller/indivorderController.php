@@ -3,7 +3,7 @@
 	require_once (CHEMIN_MODEL . '/mainModel.php');
 	switch($_REQUEST['action']){
 		case 'show':
-			$users = get_users_cmd();
+			$users = get_users();
 			$validate_url = HTTP_INDEX.'?page=indivorder&action=validate';
 
 			include_once(CHEMIN_VIEW . '/header.php');
