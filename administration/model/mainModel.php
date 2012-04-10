@@ -22,7 +22,7 @@ function get_groups() {
 		$req_carrier = "SELECT id_user FROM carrier WHERE id_order in
 						(SELECT id_order FROM orders WHERE validated=0 and id_user in
 						(SELECT id_user FROM users,groups WHERE users.id_group=groups.id_group and groups.id_group=" . $value['id_group'] . ") and paid=1)";
-		var_dump($key);
+	//	var_dump($key);
 		foreach ($bdd->query($req_carrier) as $carrier => $id) {
 			$groups[$key]['carrier']['id_user'] = $id['id_user'];
 			$groups[$key]['carrier']['nom'] = $groups[$key]['users'][$id['id_user']]['nom'];
@@ -107,10 +107,4 @@ function validate($id_order) {
 	}
 }
 
-// echo "<pre>";
-// print_r(get_groups());
-// echo "</pre>";
-/*echo "<pre>";
-print_r(get_users());
-echo "</pre>";*/
 ?>

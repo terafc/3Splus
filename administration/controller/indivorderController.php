@@ -25,7 +25,7 @@
 			break;
 		case 'validate':
 			if(isset($_REQUEST['id_order'])){
-				validate($id_order);
+				validate($_REQUEST['id_order']);
 			}
 			header('Location: ' . HTTP_INDEX . '?page=indivorder&action=show');
 			break;
